@@ -1,0 +1,4 @@
+[build]
+base = "fishproj5/"
+publish = "projfish/build/"
+command = "yarn build"

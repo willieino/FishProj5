@@ -15,7 +15,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      viewTrip: null,
+      viewTrip: "trip",
       TripTbl: [],
       StartDate: null,
       ID: null,
@@ -24,70 +24,73 @@ class App extends Component {
       GPS1: "",
       GPS2: "",
       CatchTbl: [],
-        Species: "",
-        CatchDate: "",
-        Location: "",
-        Angler: "",
-        Quantity: "",
-        Weight: "",
-        Length: "",
-        Girth: "",
-        FightTime: "",
-        Outcome: "",
-        Style: "",
-        Bait: "",
-        BaitColor: "",
-        Notes: "",
-        AirTemp: "",
-        WindDirection: "",
-        Wind: "",
-        SkyCondition: "",
-        LunarPhase: "",
-        Pressure: "",
-        Barometer: "",
-        WaterTemp: "",
-        WaterDepth: "",
-        WaterPh: "",
-        Current: "",
-        Bottom: "",
-        WaterColor: "",
-        Tide: "",
-        WaterLevel: "",
-        Seas: "",
-        Rod: "",
-        Reel: "",
-        HookSize: "",
-        HookType: "",
-        SinkerWeight: "",
-        SinkerStyle: "",
-        LineTest: "",
-        LineStyle: "",
-        LineColor: "",
-        ImgCation: "",
-        Photo: "",
-      }
+      Species: "",
+      CatchDate: "",
+      Location: "",
+      Angler: "",
+      Quantity: "",
+      Weight: "",
+      Length: "",
+      Girth: "",
+      FightTime: "",
+      Outcome: "",
+      Style: "",
+      Bait: "",
+      BaitColor: "",
+      Notes: "",
+      AirTemp: "",
+      WindDirection: "",
+      Wind: "",
+      SkyCondition: "",
+      LunarPhase: "",
+      Pressure: "",
+      Barometer: "",
+      WaterTemp: "",
+      WaterDepth: "",
+      WaterPh: "",
+      Current: "",
+      Bottom: "",
+      WaterColor: "",
+      Tide: "",
+      WaterLevel: "",
+      Seas: "",
+      Rod: "",
+      Reel: "",
+      HookSize: "",
+      HookType: "",
+      SinkerWeight: "",
+      SinkerStyle: "",
+      LineTest: "",
+      LineStyle: "",
+      LineColor: "",
+      ImgCation: "",
+      Photo: "",
+    }
 
   }
 
 
   componentDidMount() {
+    const pageType = "trip";
+    this.setState(() => ({ viewTrip: pageType }));
+    //this.setState(() => ({ viewTrip: pageType }));
     // check if key exists in local storage
-    if (localStorage.getItem('viewTrip')) {
-      let pageType = localStorage.viewTrip
+    /*  if (localStorage.getItem('viewTrip')) {
+       let pageType = localStorage.viewTrip
+ 
+       this.setState(() => ({ viewTrip: pageType }));
+     } else {
+       let pageType = 'trip'
+       this.setState(() => ({ viewTrip: pageType, TripTbl: TripTbl, CatchTbl: CatchTbl }));
+     } */
 
-      this.setState(() => ({ viewTrip: pageType }));
-    } else {
-      let pageType = 'trip'
-      this.setState(() => ({ viewTrip: pageType, TripTbl: TripTbl, CatchTbl: CatchTbl }));
-    }
-
-    this.setState({ TripTbl: this.TripTbl, CatchTbl: this.CatchTbl })
+    this.setState({ TripTbl: TripTbl, CatchTbl: CatchTbl, viewTrip: pageType })
   }
 
   changeHandler = (e) => {
 
     this.setState({ [e.target.name]: e.target.value });
-  //  console.log(this.state)
+    //  console.log(this.state)
   }
 
   viewTripForm = (e) => {
@@ -154,7 +157,7 @@ class App extends Component {
       GPS2: this.state.GPS2,
       ImgCaption: this.state.ImgCaption
     }
-   // this.setState(() => ({ TripTbl: this.TripTbl, newTripRec: newTripRec }));
+    // this.setState(() => ({ TripTbl: this.TripTbl, newTripRec: newTripRec }));
     TripTbl.push(newTripRec);
     this.setState(() => ({ TripTbl: this.TripTbl }));
   }
@@ -207,65 +210,65 @@ class App extends Component {
       ImgCaption: this.state.ImgCaption,
       photo: this.state.Photo,
     }
-   // this.setState(() => ({ CatchTbl: this.CatchTbl, newCatchRec: newCatchRec }));
+    // this.setState(() => ({ CatchTbl: this.CatchTbl, newCatchRec: newCatchRec }));
     CatchTbl.push(newCatchRec);
     this.setState(() => ({ CatchTbl: this.CatchTbl }));
-   // console.log("CATchtable: ", this.state)
+    // console.log("CATchtable: ", this.state)
   }
 
   render() {
 
-    let pageType = localStorage.getItem('viewTrip');
-    //console.log("pagetype: ", pageType)
-    switch (pageType) {
+    // let pageType = localStorage.getItem('viewTrip');
+    console.log("this.state.viewtrip: ", this.state.viewTrip)
+    switch (this.state.viewTrip) {
       case 'catch':
         return <div className="App">
           <div className="main-container">
             <NavLeft viewCatchData={this.viewCatchData} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
             <div className="main-display">
               <CatchFrm changeHandler={this.changeHandler} catchSubmit={this.catchSubmit} ID={this.props.ID} Trip={this.props.Trip}
-      key={this.props.ID}
-      Species={this.props.Species}
-      CatchDate={this.props.CatchDate}
-      Location={this.props.Location}
-      Angler={this.props.Angler}
-      Quantity={this.props.Quantity}
-      Weight={this.props.Weight}
-      Length={this.props.Length}
-      Girth={this.props.Girth}
-      FightTime={this.props.FightTime}
-      Outcome={this.props.Outcome}
-      Style={this.props.Style}
-      Bait={this.props.Bait}
-      BaitColor={this.props.BaitColor}
-      Notes={this.props.Notes}
-      AirTemp={this.props.AirTemp}
-      WindDirection={this.props.WindDirection}
-      Wind={this.props.Wind}
-      SkyCondition={this.props.SkyCondition}
-      LunarPhase={this.props.LunarPhase}
-      Pressure={this.props.Pressure}
-      Barometer={this.props.Barometer}
-      WaterTemp={this.props.WaterTemp}
-      WaterDepth={this.props.WaterDepth}
-      WaterPh={this.props.WaterPh}
-      Current={this.props.Current}
-      Bottom={this.props.Bottom}
-      WaterColor={this.props.WaterColor}
-      Tide={this.props.Tide}
-      WaterLevel={this.props.WaterLevel}
-      Seas={this.props.Seas}
-      Rod={this.props.Rod}
-      Reel={this.props.Reel}
-      HookSize={this.props.HookSize}
-      HookType={this.props.HookType}
-      SinkerWeight={this.props.SinkerWeight}
-      SinkerStyle={this.props.SinkerStyle}
-      LineTest={this.props.LineTest}
-      LineStyle={this.props.LineStyle}
-      LineColor={this.props.LineColor}
-      ImgCaption={this.props.ImgCaption}
-      photo={this.props.Photo}/>
+                key={this.props.ID}
+                Species={this.props.Species}
+                CatchDate={this.props.CatchDate}
+                Location={this.props.Location}
+                Angler={this.props.Angler}
+                Quantity={this.props.Quantity}
+                Weight={this.props.Weight}
+                Length={this.props.Length}
+                Girth={this.props.Girth}
+                FightTime={this.props.FightTime}
+                Outcome={this.props.Outcome}
+                Style={this.props.Style}
+                Bait={this.props.Bait}
+                BaitColor={this.props.BaitColor}
+                Notes={this.props.Notes}
+                AirTemp={this.props.AirTemp}
+                WindDirection={this.props.WindDirection}
+                Wind={this.props.Wind}
+                SkyCondition={this.props.SkyCondition}
+                LunarPhase={this.props.LunarPhase}
+                Pressure={this.props.Pressure}
+                Barometer={this.props.Barometer}
+                WaterTemp={this.props.WaterTemp}
+                WaterDepth={this.props.WaterDepth}
+                WaterPh={this.props.WaterPh}
+                Current={this.props.Current}
+                Bottom={this.props.Bottom}
+                WaterColor={this.props.WaterColor}
+                Tide={this.props.Tide}
+                WaterLevel={this.props.WaterLevel}
+                Seas={this.props.Seas}
+                Rod={this.props.Rod}
+                Reel={this.props.Reel}
+                HookSize={this.props.HookSize}
+                HookType={this.props.HookType}
+                SinkerWeight={this.props.SinkerWeight}
+                SinkerStyle={this.props.SinkerStyle}
+                LineTest={this.props.LineTest}
+                LineStyle={this.props.LineStyle}
+                LineColor={this.props.LineColor}
+                ImgCaption={this.props.ImgCaption}
+                photo={this.props.Photo} />
             </div>
           </div>
         </div>;
@@ -302,17 +305,17 @@ class App extends Component {
           </div>
         </div>;
 
-     case 'charts':
-     return <div className="App">
-       <div className="main-container">
-         <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
-         <div className="main-display">
-           <Charts />
-         </div>
-       </div>
-     </div>;
-   
-        };
+      case 'charts':
+        return <div className="App">
+          <div className="main-container">
+            <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <div className="main-display">
+              <Charts />
+            </div>
+          </div>
+        </div>;
+
+    };
   }
 }
 

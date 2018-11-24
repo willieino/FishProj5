@@ -1,32 +1,531 @@
 .App {
-  text-align: center;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    /*  border: 4px solid pink;     */
+    background-color: rgb(15, 14, 83);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+    background-color: rgb(15, 14, 83);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: rgb(42, 167, 224);
+    max-width: 100%;
+    height: 34px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    top: 0px;
+    /*  width: 800px; */
+    /*   border: 2px solid purple;  */
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /*  height: 100%; */
+    /* border: 2px solid white;   */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    /*  max-width: 100%; */
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    padding: 0px;
+    left: 146px;
+    top: 0px;
+    /*  border: 2px solid red;   */
 }
+
+.nav-left {
+    max-width: 192px;
+    width: 146px;
+    font-size: 18px;
+    background-color: rgb(42, 167, 224);
+    height: 2000px;
+    position: absolute;
+    top: 0px;
+    /*  border: 2px solid orange;  */
+}
+
+.nav-list {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    line-height: 30px;
+    padding: 0;
+    padding-left: 0px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /*  animation: move-it 2s 1; */
+    /*  border: 2px solid gray; */
+}
+
+@keyframes move-it {
+    0% {
+        left: -160px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.nav-left-item {
+    margin-left: 5px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    left: 0px;
+    top: 0px;
+    /*  border: 1px solid red; */
+    /*  animation: move-it 2s linear 0s 10; */
+}
+
+.nav-left-item:hover {
+    /*  background-color: black; */
+    /*   animation: move-it 1s linear 0s 10; */
+}
+
+.nav-button {
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(42, 167, 224);
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    left: 1px;
+    border: 0px solid blue;
+}
+
+.nav-button:hover {
+    /*  background-color: black; */
+    color: rgb(8, 89, 143);
+   /*  animation: move-it 1s linear 0s 10; */
+}
+
+.catch-data {
+    border: 1px solid gray;
+    width: 30%;
+    text-align-last: left;
+    display: flex;
+}
+
+.style {
+    margin-left: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    width: 410px;
+    font-size: 20px;
+    border: 1px solid gray;
+    background-color: rgb(16, 14, 148);
+    /* border-radius: 10px; */
+    /* background-color: rgb(36, 97, 158); */
+}
+
+.style-text {
+    font-size: 20px;
+    color: white;
+    Margin-left: 20px;
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+
+.trip {
+    width: 60%;
+    color: rgb(252, 248, 248);
+    background-color: rgb(16, 14, 148);
+    border: 1px solid gray;
+    padding-bottom: 4px;
+    margin-left: 10px;
+}
+
+.trip:hover {
+    background-color: rgb(34, 32, 204);
+}
+
+.trip-data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    height: auto;
+    max-height: auto;
+    background-color: rgb(15, 14, 83);
+}
+
+.trip-container {
+    display: flex;
+    flex-direction: row;
+    /*  border: 2px solid green;    */
+    height: 800px;
+}
+
+.trip-header {
+    /* border: 2px solid brown;  */
+    background-color: rgb(42, 167, 224);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 16px;
+    padding-left: 1%;
+    color: white;
+    width: 100%;
+    min-width: 500px;
+}
+
+.trip2-header {
+    /* border: 2px solid brown;  */
+    background-color: rgb(42, 167, 224);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    height: 36px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 1%;
+    color: white;
+    width: 100%;
+    min-width: 500px;
+}
+
+.trip-form {
+    /* border: 2px solid white;   */
+    width: 800px;
+}
+
+.input-container {
+    /*  border: 2px solid yellow;   */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    background-color: rgb(15, 14, 83);
+}
+
+.input-side-container {
+    /* border: 2px solid red; */
+    width: 30%;
+    /* padding-left: 10px; */
+}
+
+.button-container {
+    /* border: 2px solid orange; */
+    height: 50px;
+}
+
+.column {
+    border: 1px solid rgba(128, 128, 128, 0.555);
+    width: 100px;
+    font-size: 12px;
+    text-align: center;
+    background-color: rgb(10, 9, 58);
+}
+
+.column:hover {
+    background-color: rgb(42, 167, 224);
+}
+
+.column2 {
+    border: 1px solid rgba(128, 128, 128, 0.555);
+    width: 65px;
+    font-size: 12px;
+    text-align: center;
+    background-color: rgb(10, 9, 58);
+}
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    /*  background-color: blue; */
+}
+
+.hi-lite {
+    background-color: rgb(57, 84, 207);
+}
+
+.hi-lite:hover {
+    background-color: rgb(42, 167, 224);
+}
+
+.trip-text {
+    padding-top: 6px;
+    margin-left: 10px;
+    /* padding-bottom: 4px; */
+}
+
+.trip-text:hover {
+    color: yellow;
+}
+
+.table-display {
+    /*   border: 4px solid red;  */
+    width: 100%;
+}
+
+#photos {
+    width: 180px;
+}
+
+#caption {
+    width: 180px;
+}
+
+#id {
+    width: 40px;
+    text-align: center;
+}
+
+.select {
+    height: 26px;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.text-save {
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+    /*   border: 1px solid red; */
+    /*  animation: move-it 2s linear 0s 10; */
+}
+
+.text-save:hover {
+    font-size: 16px;
+    /*   animation: move-it 1s linear 1; */
+}
+
+.nav-left-item,
+.icon1 {
+    margin-top: 0px;
+}
+
+.select-place {
+    width: 80%;
+    background-color: rgb(16, 14, 148);
+    border: 1px solid gray;
+    color: white;
+    margin-left: 10px;
+}
+
+.catch-table-row {
+    display: flex;
+    flex-direction: row;
+    /* width: auto; */
+}
+
+.catch-table-display {
+    /*  display: flex; */
+    /* flex-direction: row; */
+    width: 3000px;
+    /* border: 2px solid green; */
+}
+
+#catchDate,
+#tripName,
+#location,
+.catchs,
+#notes,
+.lunarPhase,
+#rod,
+#reel {
+    width: 120px;
+}
+
+#angler,
+.angler,
+#fish-style,
+.windDirection,
+#wind,
+.bottom,
+#sinkerStyle,
+.species {
+    width: 90px;
+}
+
+#notes,
+#imgCaption {
+    width: 160px;
+}
+
+#catchNotes {
+    width: 200px;
+}
+
+.nav-left-icon-1 {
+    background-image: url('./Graphics/fish16.png');
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid black;  */
+    /* animation: move-it; */
+}
+
+.nav-left-icon-1:hover {
+    background-image: url('./Graphics/fish15.png');
+}
+
+/* enter trip info */
+
+#icon2 {
+    background-image: url('./Graphics/fish22.png');
+}
+
+/* view catches */
+
+#icon3 {
+    background-image: url('./Graphics/fish12.png');
+    height: 48px;
+}
+
+/* enter catch info */
+
+#icon4 {
+    background-image: url('./Graphics/fish7.png');
+    width: 120px;
+    height: 52px;
+}
+
+/* view charts */
+
+#icon5 {
+    background-image: url('./Graphics/fish24.png');
+    width: 140px;
+    height: 50px;
+}
+
+/* clear fields */
+
+#icon6 {
+    background-image: url('./Graphics/fish14.png');
+    height: 40px;
+}
+
+/* cancal changes */
+
+#icon7 {
+    background-image: url('./Graphics/fish9.png');
+    width: 120px;
+    height: 50px;
+}
+
+/* print */
+
+#icon8 {
+    background-image: url('./Graphics/fish7.png');
+    width: 120px;
+    height: 50px;
+}
+
+/* logout */
+
+#icon9 {
+    background-image: url('./Graphics/fish13.png');
+    width: 140px;
+    height: 40px;
+}
+
+#icon2:hover {
+    background-image: url('./Graphics/fish23.png');
+}
+
+#icon3:hover {
+    background-image: url('./Graphics/fish11.png');
+}
+
+#icon4:hover {
+    background-image: url('./Graphics/fish8.png');
+}
+
+#icon5:hover {
+    background-image: url('./Graphics/fish25.png');
+}
+
+#icon6:hover {
+    background-image: url('./Graphics/fish13.png');
+}
+
+#icon7:hover {
+    background-image: url('./Graphics/fish10.png');
+}
+
+#icon8:hover {
+    background-image: url('./Graphics/fish8.png');
+}
+
+#icon9:hover {
+    background-image: url('./Graphics/fish14.png');
+}
+
+.save-trip-data {
+    color: white;
+    width: 60%;
+    margin-left: 10px;
+    margin-top: 20px;
+    height: 40px;
+    background-color: rgb(57, 84, 207);
+    border: 2px solid rgb(237, 236, 240);
+}
+
+.save-trip-data:hover {
+    color: yellow;
+    background-color: rgb(26, 6, 199);
+    border: 2px solid yellow;
+}
+
+.container-btn {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+#file-upload {
+    cursor: pointer;
+}
+
+.chart-type {
+    /* border: 2px solid green; */
+    height: 30px;
+    color: white;
+    text-align: center;
+    width: 84%;
+}
+
+.new-table {
+    border: 2px solid green;
+    height: 900px;
+    width: 5000px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    
+    }
+    

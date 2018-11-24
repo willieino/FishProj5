@@ -1,0 +1,89 @@
+.catch-form {
+background-color: rgb(15, 14, 83);
+color: white;
+/* border: 2px solid red; */
+width: 800px;
+min-width: 800px;
+}
+
+.catch-container {
+  /*  border: 2px solid green;  */
+width: 100%;
+
+}
+
+
+.input-catch-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+     /* border: 2px solid white;  */
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+    height: 1200px;
+}
+
+.catch-header {
+/* border: 2px solid blue; */
+background-color: rgb(42, 167, 224);
+width: 100%;
+
+}
+
+.catch {
+width: 47%;
+color: white;
+background-color: rgb(16, 14, 148);
+border: 1px solid gray;
+}
+
+.catch:hover {
+  width: 47%;
+  color: white;
+  background-color: rgb(33, 30, 211);
+  border: 1px solid gray;
+  }
+
+.catch-text {
+
+
+}
+.catch-text:hover {
+color: yellow;
+
+}
+.select-place {
+width: 30%;
+
+}
+
+.save-catch-data {
+color: white;
+width: 47%;
+margin-top: 20px;
+height: 40px;
+background-color: rgb(44, 44, 168);
+
+}
+
+.save-catch-data:hover {
+  background-color: rgb(26, 6, 199);
+}
+
+.charts {
+ /*  border: 2px solid red; */
+  width: 200px;
+  height: 2000px;
+  left: 200px;
+  top: 200px;
+
+  
+  }
+
+  .chart-container {
+width: 60%;
+/* background-color: red; */
+height: 300px;
+
+  }

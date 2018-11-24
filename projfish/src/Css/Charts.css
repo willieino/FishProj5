@@ -1,0 +1,141 @@
+.nav-button-n {
+    color: white;
+    font-size: 12px;
+    background-color: rgb(42, 167, 224);
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    border: 0px solid green;
+}
+
+.nav-button-n:hover {
+    /*  background-color: black; */
+    color: rgb(8, 89, 143);
+}
+
+.nav-chart {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+   /*  border: 2px solid yellow; */
+    background-color: rgb(42, 167, 224);
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 800px;
+   /*   border: 2px solid blue;  */
+}
+
+.charts {
+    margin-top: 80px;
+    width: 800px;
+    /* border: 2px solid green; */
+    height: 600px;
+}
+
+.nav-icon-1 {
+    background-image: url('../Graphics/fish17.png');
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid black;  */
+    /* animation: move-it; */
+}
+
+.nav-icon-1:hover {
+    background-image: url('../Graphics/fish20.png');
+}
+
+#cicon2 {
+    background-image: url('../Graphics/fish17.png');
+     width: 116px;
+}
+/* view catches */
+#cicon3 {
+    background-image: url('../Graphics/bars1.png');
+    /* margin-top: 4px; */
+    width: 80px;
+   /*  border: 2px solid blue; */
+    /* width: 120px; */
+}
+/* enter catch info */
+#cicon4 {
+    background-image: url('../Graphics/bars1.png');
+    /* margin-top: 4px; */
+    width: 80px;
+   
+    /* width: 120px; */
+}
+/* save changes */
+#cicon5 {
+    background-image: url('../Graphics/fish17.png');
+    width: 100px;
+}
+/* clear fields */
+#cicon6 {
+    background-image: url('../Graphics/fish17.png');
+    width: 80px;
+}
+/* cancal changes */
+#cicon7 {
+    background-image: url('../Graphics/fish17.png');
+    /* width: 120px; */
+}
+/* print */
+#cicon8 {
+    background-image: url('../Graphics/fish7.png');
+  /*   width: 120px; */
+}
+/* logout */
+#cicon9 {
+    background-image: url('../Graphics/fish17.png');
+   /*  width: 120px; */
+}
+
+#cicon2:hover {
+    background-image: url('../Graphics/cfish1.png');
+}
+
+#cicon3:hover {
+    background-image: url('../Graphics/bars2.png');
+}
+
+#cicon4:hover {
+    background-image: url('../Graphics/bars2.png');
+}
+
+#cicon5:hover {
+    background-image: url('../Graphics/cfish1.png');
+}
+
+#cicon6:hover {
+    background-image: url('../Graphics/cfish1.png');
+}
+
+#cicon7:hover {
+    background-image: url('../Graphics/cfish1.png');
+}
+
+#cicon8:hover {
+    background-image: url('../Graphics/fish8.png');
+}
+
+#cicon9:hover {
+    background-image: url('../Graphics/fish15.png');
+}
+
+.new-table {
+border: 2px solid green;
+height: 800px;
+width: 5000px;
+background-color: white;
+color: black;
+
+}

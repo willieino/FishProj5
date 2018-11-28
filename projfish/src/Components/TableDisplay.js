@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TripTbl from "../Tables/tripTbl";
-import TableRow from "./TableRow";
+//import TableRow from "./TableRow";
 import '../App.css';
 import TripHeaders from "../Tables/tripHeaders";
 import ReactTable from "react-table";
@@ -38,21 +38,7 @@ class TableDisplay extends Component {
   render() {
 
     return (
-      <div className="table-display"><div className="trip2-header">View of all Trip Information:</div>{TripTbl.map((trips, index) => {
-        return <TableRow
-          key={trips.ID}
-          trip={trips.Trip}
-          startDate={trips.StartDate}
-          duration={trips.Duration}
-          place={trips.Place}
-          photos={trips.Photos}
-          id={trips.ID}
-          notes={trips.Notes}
-          anglers={trips.Anglers}
-          gps1={trips.GPS1}
-          gps2={trips.GPS2}
-          imgCaption={trips.ImgCaption} />
-      })}<div className="new-trip-table">
+      <div className="table-display"><div className="trip2-header">Trip View Information:</div><div className="new-trip-table">
           <ReactTable
             data={this.state.TripTbl}
             columns={this.state.TripHeaders}

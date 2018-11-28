@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../Css/CatchFrm.css';
-//import AddNewInput from "./AddNewInput";
-//import data from "../Tables/tblBait"
+
 
 class CatchFrm extends Component {
   constructor(props) {

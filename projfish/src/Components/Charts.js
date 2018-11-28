@@ -3,7 +3,7 @@ import '../Css/Charts.css';
 import CatchTbl from "../Tables/catchTbl";
 import CatchHeaders from "../Tables/catchHeaders";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
-import ReactTable from "react-table";
+//import ReactTable from "react-table";
 import "react-table/react-table.css";
 
 class Charts extends Component {
@@ -27,9 +27,6 @@ class Charts extends Component {
   componentDidMount() {
 
     this.setState(() => ({ CatchTbl: CatchTbl, CatchHeaders: CatchHeaders }));
-    // console.log("in the nav componentDidMount")
-    // console.log(this.state)
-   
   }
 
   handleSkillsCheckBox(e) {
@@ -50,7 +47,7 @@ class Charts extends Component {
     )
   }
 
- 
+
   chartBaitType = (e) => {
     e.preventDefault();
     let tmpArray = [];
@@ -62,11 +59,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Bait: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -74,7 +70,6 @@ class Charts extends Component {
     const tmp = "Bait"
     const barColor = '#463dfc';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
-    // console.log(this.state)
   }
 
   chartFishCaught = (e) => {
@@ -88,11 +83,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Species: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -113,11 +107,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Angler: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -138,11 +131,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Rod: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -163,11 +155,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         LineStyle: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -188,11 +179,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         BaitColor: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -213,11 +203,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Style: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -238,11 +227,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Location: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -263,11 +251,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         AirTemp: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -288,11 +275,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         SkyCondition: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -313,11 +299,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         LunarPhase: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -338,11 +323,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Pressure: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -363,11 +347,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         WaterTemp: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -388,11 +371,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         WaterDepth: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -413,11 +395,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Bottom: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -438,11 +419,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         WaterColor: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -463,11 +443,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         Reel: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -488,11 +467,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         HookSize: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -513,11 +491,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         HookType: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -538,11 +515,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         SinkerStyle: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -563,11 +539,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         LineTest: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -588,11 +563,10 @@ class Charts extends Component {
       }
       return tally;
     }, {});
-    var obj = test;
-    for (const prop in obj) {
+    for (const prop in test) {
       let fish = {
         LineColor: prop,
-        Qty: obj[prop]
+        Qty: test[prop]
       }
       tmpArray.push(fish);
     }
@@ -698,19 +672,14 @@ class Charts extends Component {
           </div>
         </form></div>
         <div className="charts"><div className="chart-type">{this.state.chartType}</div>
-          <div className="chart-container2"> <BarChart width={650} height={400} data={this.state.fishy}>
-
-            <Tooltip /><CartesianGrid strokeDasharray="3 3" /> <XAxis dataKey={this.state.xBar} /> <YAxis label={{ value: this.state.xLabel, angle: -90, position: 'insideLeft' }} /> <Bar dataKey='Qty' fill={this.state.color} />
-          </BarChart></div><div className="new-table">
-            <ReactTable
-              data={this.state.CatchTbl}
-              columns={this.state.CatchHeaders}
-              defaultPageSize={10}
-              style={{
-                height: "200px" // This will force the table body to overflow and scroll, since there is not enough room
-              }}
-              className="-striped -highlight"
-            /></div>
+          <div className="chart-container2">
+            <BarChart width={650} height={400} data={this.state.fishy}>
+              <Tooltip />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey={this.state.xBar} />
+              <YAxis label={{ value: this.state.xLabel, angle: -90, position: 'insideLeft' }} />
+              <Bar dataKey='Qty' fill={this.state.color} />
+            </BarChart></div>
         </div>
       </div>
 

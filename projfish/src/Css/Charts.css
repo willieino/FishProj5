@@ -311,12 +311,26 @@
     background-image: url('../Graphics/cfish1.png');
 }
 
+.ctr {
+   /*  border: 2px solid red; */
+    width: 100px;
+height: 100px;
+    background-image: url('../Graphics/int_ctr.png');
+}
+
+.ctr:hover {
+    /*  border: 2px solid red; */
+    
+ 
+     background-image: url('../Graphics/int_ctr_hi.png');
+ }
 .new-table {
     border: 2px solid green;
     height: 410px;
     width: 5000px;
-    background-color: white;
+    background-color: #e7235e;
     color: black;
+    
 }
 
 /* .checkbox-group {

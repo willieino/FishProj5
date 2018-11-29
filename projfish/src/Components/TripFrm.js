@@ -78,6 +78,7 @@ class TripFrm extends Component {
             <div className="trip-text">Image Caption: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
             <button className="save-trip-data" value="SaveTripData" onClick={this.props.handleSubmit} name="SaveTripData">Save Changes</button>
+           
           </div>
         </div>
       </form>

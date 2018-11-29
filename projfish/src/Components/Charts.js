@@ -236,7 +236,7 @@ class Charts extends Component {
     }
     const chartType = "By Location"
     let tmp = "Location"
-    let barColor = '#f9fc3d';
+    let barColor = '#ff0707';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -260,7 +260,7 @@ class Charts extends Component {
     }
     const chartType = "By Air Temperature"
     let tmp = "AirTemp"
-    let barColor = '#f9fc3d';
+    let barColor = '#e7a923';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -284,7 +284,7 @@ class Charts extends Component {
     }
     const chartType = "By Sky Condition"
     let tmp = "SkyCondition"
-    let barColor = '#f9fc3d';
+    let barColor = '#23e744';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -308,7 +308,7 @@ class Charts extends Component {
     }
     const chartType = "By Lunar Phase:"
     let tmp = "LunarPhase"
-    let barColor = '#fc3d8d';
+    let barColor = '#4e237e7';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -332,7 +332,7 @@ class Charts extends Component {
     }
     const chartType = "By Pressure:"
     let tmp = "Pressure"
-    let barColor = '#fc3d8d';
+    let barColor = '#e7235e';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -356,7 +356,7 @@ class Charts extends Component {
     }
     const chartType = "By Water Temp:"
     let tmp = "WaterTemp"
-    let barColor = '#fc3d8d';
+    let barColor = '#ff0707';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -380,7 +380,7 @@ class Charts extends Component {
     }
     const chartType = "By Water Depth:"
     let tmp = "WaterDepth"
-    let barColor = '#fc3d8d';
+    let barColor = '#e7a923';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -404,7 +404,7 @@ class Charts extends Component {
     }
     const chartType = "By Bottom:"
     let tmp = "Bottom"
-    let barColor = '#fc3d8d';
+    let barColor = '#9ce723';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -428,7 +428,7 @@ class Charts extends Component {
     }
     const chartType = "By Water Color:"
     let tmp = "WaterColor"
-    let barColor = '#fc3d8d';
+    let barColor = '#23e744';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -452,7 +452,7 @@ class Charts extends Component {
     }
     const chartType = "By Reel:"
     let tmp = "Reel"
-    let barColor = '#fc3d8d';
+    let barColor = '#4e237e7';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -476,7 +476,7 @@ class Charts extends Component {
     }
     const chartType = "By Hook Size:"
     let tmp = "HookSize"
-    let barColor = '#fc3d8d';
+    let barColor = '#ff0707';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -500,7 +500,7 @@ class Charts extends Component {
     }
     const chartType = "By Hook Type:"
     let tmp = "HookType"
-    let barColor = '#fc3d8d';
+    let barColor = '#e7a923';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -524,7 +524,7 @@ class Charts extends Component {
     }
     const chartType = "By Sinker Style:"
     let tmp = "SinkerStyle"
-    let barColor = '#fc3d8d';
+    let barColor = '#9ce723';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -548,7 +548,7 @@ class Charts extends Component {
     }
     const chartType = "By Line Test:"
     let tmp = "LineTest"
-    let barColor = '#fc3d8d';
+    let barColor = '#23e744';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 
@@ -572,7 +572,7 @@ class Charts extends Component {
     }
     const chartType = "By Line Color:"
     let tmp = "LineColor"
-    let barColor = '#fc3d8d';
+    let barColor = '#4e237e7';
     this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
   }
 

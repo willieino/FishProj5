@@ -12,7 +12,6 @@
 }
 
 .nav-button-n:hover {
-    /*  background-color: black; */
     color: rgb(8, 89, 143);
 }
 
@@ -24,8 +23,6 @@
 }
 
 .nav-chart {
-    /* width: auto; */
-    /* display: flex; */
     flex-direction: row;
     height: 116px;
     overflow-x: scroll;
@@ -69,162 +66,151 @@
     margin-left: auto;
     margin-right: auto;
     /* border: 1px solid black;  */
-    /* animation: move-it; */
 }
 
 .nav-icon-1:hover {
     background-image: url('../Graphics/fish20.png');
 }
 
+/* By BaitType */
+
 #cicon2 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* view catches */
+/* By Angler */
 
 #cicon3 {
     background-image: url('../Graphics/bars1.png');
-    /* margin-top: 4px; */
     width: 80px;
     /*  border: 2px solid blue; */
-    /* width: 120px; */
 }
 
-/* enter catch info */
+/* By Rod Type  */
 
 #cicon4 {
     background-image: url('../Graphics/bars1.png');
-    /* margin-top: 4px; */
     width: 80px;
-    /* width: 120px; */
 }
 
-/* save changes */
+/* By Line Type */
 
 #cicon5 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* clear fields */
+/* By Bait Color */
 
 #cicon6 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* cancal changes */
+/* By Fishing Style */
 
 #cicon7 {
     background-image: url('../Graphics/fish17.png');
     /* width: 120px; */
 }
 
-/* print */
+/* By Location */
 
 #cicon8 {
     background-image: url('../Graphics/fish17.png');
-    /*   width: 120px; */
 }
 
-/* logout */
+/* By Air Temp */
 
 #cicon9 {
     background-image: url('../Graphics/fish17.png');
-    /*  width: 120px; */
 }
+
+/* By Sky Condition */
 
 #cicon10 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* view catches */
+/* By Lunar Phase */
 
 #cicon11 {
     background-image: url('../Graphics/bars1.png');
-    /* margin-top: 4px; */
     width: 80px;
     /*  border: 2px solid blue; */
-    /* width: 120px; */
 }
 
-/* enter catch info */
+/* By Pressure */
 
 #cicon12 {
     background-image: url('../Graphics/bars1.png');
-    /* margin-top: 4px; */
     width: 80px;
-    /* width: 120px; */
 }
 
-/* save changes */
+/* By Water Temp */
 
 #cicon13 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* clear fields */
+/* By Water Depth */
 
 #cicon14 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* cancal changes */
+/* By Bottom */
 
 #cicon15 {
     background-image: url('../Graphics/fish17.png');
-    /* width: 120px; */
 }
 
-/* print */
+/* By Water Color */
 
 #cicon16 {
     background-image: url('../Graphics/fish17.png');
-    /*   width: 120px; */
 }
 
-/* logout */
+/* By Reel */
 
 #cicon17 {
     background-image: url('../Graphics/fish17.png');
-    /*  width: 120px; */
 }
+
+/* By Hook Size */
 
 #cicon18 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* clear fields */
+/* By Hook Type */
 
 #cicon19 {
     background-image: url('../Graphics/fish17.png');
     width: 80px;
 }
 
-/* cancal changes */
+/* By Sinker Style */
 
 #cicon20 {
     background-image: url('../Graphics/fish17.png');
-    /* width: 120px; */
 }
 
-/* print */
+/* By Line Test */
 
 #cicon21 {
     background-image: url('../Graphics/fish17.png');
-    /*   width: 120px; */
 }
 
-/* logout */
+/* By Line Color */
 
 #cicon22 {
     background-image: url('../Graphics/fish17.png');
-    /*  width: 120px; */
 }
 
 #cicon2:hover {
@@ -312,35 +298,25 @@
 }
 
 .ctr {
-   /*  border: 2px solid red; */
+    /*  border: 2px solid red; */
     width: 100px;
-height: 100px;
+    height: 100px;
     background-image: url('../Graphics/int_ctr.png');
 }
 
 .ctr:hover {
     /*  border: 2px solid red; */
-    
- 
-     background-image: url('../Graphics/int_ctr_hi.png');
- }
+    background-image: url('../Graphics/int_ctr_hi.png');
+}
+
 .new-table {
     border: 2px solid green;
     height: 410px;
     width: 5000px;
-    background-color: #e7235e;
+    /* background-color: #1f40d32a;  */
     color: black;
-    
+    font-weight: 400;
 }
-
-/* .checkbox-group {
-border: 8px solid brown;
-width: 200px;
-height: 200px;
-
-
-}
- */
 
 .container-btn {
     display: inline-block;

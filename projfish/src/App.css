@@ -235,39 +235,38 @@ body {
     height: 50px;
 }
 
-.column {
+/* .column {
     border: 1px solid rgba(128, 128, 128, 0.555);
     width: 100px;
     font-size: 12px;
     text-align: center;
     background-color: rgb(10, 9, 58);
-}
+} */
 
-.column:hover {
+/* .column:hover {
     background-color: rgb(42, 167, 224);
-}
+} */
 
-.column2 {
+/* .column2 {
     border: 1px solid rgba(128, 128, 128, 0.555);
     width: 65px;
     font-size: 12px;
     text-align: center;
     background-color: rgb(10, 9, 58);
-}
+} */
 
-.table-row {
+/* .table-row {
     display: flex;
     flex-direction: row;
-    /*  background-color: blue; */
-}
+} */
 
-.hi-lite {
+/* .hi-lite {
     background-color: rgb(57, 84, 207);
-}
+} */
 
-.hi-lite:hover {
+/* .hi-lite:hover {
     background-color: rgb(42, 167, 224);
-}
+} */
 
 .trip-text {
     padding-top: 6px;
@@ -284,7 +283,7 @@ body {
     width: 100%;
 }
 
-#photos {
+/* #photos {
     width: 180px;
 }
 
@@ -295,7 +294,7 @@ body {
 #id {
     width: 40px;
     text-align: center;
-}
+} */
 
 .select {
     height: 26px;
@@ -304,21 +303,18 @@ body {
     margin-bottom: 8px;
 }
 
-.text-save {
+/* .text-save {
     display: inline-block;
     position: relative;
     font-size: 16px;
     left: 0px;
     top: 0px;
     cursor: pointer;
-    /*   border: 1px solid red; */
-    /*  animation: move-it 2s linear 0s 10; */
-}
+} */
 
-.text-save:hover {
+/* .text-save:hover {
     font-size: 16px;
-    /*   animation: move-it 1s linear 1; */
-}
+} */
 
 .nav-left-item,
 .icon1 {
@@ -333,20 +329,17 @@ body {
     margin-left: 10px;
 }
 
-.catch-table-row {
+/* .catch-table-row {
     display: flex;
     flex-direction: row;
-    /* width: auto; */
-}
+} */
 
-.catch-table-display {
-    /*  display: flex; */
-    /* flex-direction: row; */
+.catch-table-display { 
     width: 3000px;
     /* border: 2px solid green; */
 }
 
-#catchDate,
+/* #catchDate,
 #tripName,
 #location,
 .catchs,
@@ -355,9 +348,9 @@ body {
 #rod,
 #reel {
     width: 120px;
-}
+} */
 
-#angler,
+/* #angler,
 .angler,
 #fish-style,
 .windDirection,
@@ -366,16 +359,16 @@ body {
 #sinkerStyle,
 .species {
     width: 90px;
-}
+} */
 
-#notes,
+/* #notes,
 #imgCaption {
     width: 160px;
-}
+} */
 
-#catchNotes {
+/* #catchNotes {
     width: 200px;
-}
+} */
 
 .nav-left-icon-1 {
     background-image: url('./Graphics/fish16.png');
@@ -385,7 +378,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     /* border: 1px solid black;  */
-    /* animation: move-it; */
 }
 
 .nav-left-icon-1:hover {
@@ -423,34 +415,34 @@ body {
 
 /* clear fields */
 
-#icon6 {
+/* #icon6 {
     background-image: url('./Graphics/fish14.png');
     height: 40px;
-}
+} */
 
 /* cancal changes */
 
-#icon7 {
+/* #icon7 {
     background-image: url('./Graphics/fish9.png');
     width: 120px;
     height: 50px;
 }
-
+ */
 /* print */
 
-#icon8 {
+/* #icon8 {
     background-image: url('./Graphics/fish7.png');
     width: 120px;
     height: 50px;
-}
+} */
 
 /* logout */
 
-#icon9 {
+/* #icon9 {
     background-image: url('./Graphics/fish13.png');
     width: 140px;
     height: 40px;
-}
+} */
 
 #icon2:hover {
     background-image: url('./Graphics/fish23.png');
@@ -468,7 +460,7 @@ body {
     background-image: url('./Graphics/fish25.png');
 }
 
-#icon6:hover {
+/* #icon6:hover {
     background-image: url('./Graphics/fish13.png');
 }
 
@@ -482,7 +474,7 @@ body {
 
 #icon9:hover {
     background-image: url('./Graphics/fish14.png');
-}
+} */
 
 .save-trip-data {
     color: white;
@@ -537,4 +529,41 @@ body {
     font-size: 14px;
     text-align: center;
     font-weight: 500;
+}
+
+.home-container {
+    padding-left: 20px;
+background-image: url('./Graphics/lake.png');
+background-repeat: no-repeat;
+/* border: 2px solid white; */
+height: 700px;
+width: 1100px;
+}
+
+.instructions {
+    border: 2px solid rgb(5, 29, 136);
+    width: 750px;
+    background-color: rgba(17, 72, 97, 0.74);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.title-h1 {
+    border: 2px solid rgb(57, 84, 207);
+    width: 500px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    background-color: rgba(17, 72, 97, 0.74);
+}
+
+footer {
+    font-size: 12px;
+    width: 90px;
+}
+
+span {
+    color: yellow;
+
 }

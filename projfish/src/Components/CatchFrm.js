@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import '../Css/CatchFrm.css';
 
 
@@ -21,6 +22,7 @@ class CatchFrm extends Component {
       viewTrip: "",
       data: []
     }
+  
   }
 
   componentDidMount() {
@@ -30,6 +32,7 @@ class CatchFrm extends Component {
     this.setState(() => ({ viewTrip: this.pageType, data: this.data }));
   }
 
+ 
   handleChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -47,7 +50,6 @@ class CatchFrm extends Component {
       <form className="catch-form" onSubmit={this.props.catchSubmit}>
         <div className="catch-container"><div className="catch-header">Enter your Catch Info. Press Save when finished.</div>
           <div className="input-catch-container">
-
             <div className="catch-text">Trip Name:</div>
             <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Trip" />
             <div className="catch-text">Catch Date:</div>

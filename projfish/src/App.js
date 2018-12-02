@@ -6,6 +6,7 @@ import TripFrm from "./Components/TripFrm";
 import CatchFrm from "./Components/CatchFrm";
 import TripTbl from "./Tables/tripTbl";
 import Charts from "./Components/Charts";
+import Home from "./Components/Home";
 import CatchTbl from "./Tables/catchTbl";
 import TableDisplay from "./Components/TableDisplay";
 import CatchTableDisplay from "./Components/CatchTableDisplay";
@@ -71,7 +72,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    const pageType = "trip";
+    const pageType = "home";
     this.setState(() => ({ viewTrip: pageType }));
     //this.setState(() => ({ viewTrip: pageType }));
     // check if key exists in local storage
@@ -314,6 +315,16 @@ class App extends Component {
             </div>
           </div>
         </div>;
+
+case 'home':
+return <div className="App">
+  <div className="main-container">
+    <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+    <div className="main-display">
+      <Home />
+    </div>
+  </div>
+</div>;
 
     };
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TripTbl from "../Tables/tripTbl" 
 import '../App.css';
+import Place from "./Place";
+import TblLocation from "../Tables/tblLocation";
 
 class TripFrm extends Component {
   constructor(props) {
@@ -18,14 +20,16 @@ class TripFrm extends Component {
       Gps2: "",
       imgCaption: "",
       viewTrip: "",
-      TripTbl: []
+      TripTbl: [],
+      TblLocation: [],
     }
     
   }
 
   componentDidMount() {
-
-    this.setState = () => ({ TripTbl: this.props.TripTbl })
+    const places = TblLocation;
+   // this.setState = () => ({ TripTbl: TripTbl, TblLocation: places })
+    this.setState(() => ({ TripTbl: TripTbl, TblLocation: places }));
     //console.log("in the tripfrm component did mount")
    // console.log(this.state)
   }
@@ -35,18 +39,29 @@ class TripFrm extends Component {
 
   handleChange = (event) => {
     const target = event.target;
+
     const value = target.value;
     const name = target.name;
+    console.log("value:", value)
+    console.log("name:", name)
+    console.log("target:", target)
 
-    this.setState({
-      [name]: value,
-      TripTbl: TripTbl
-    });
-   // console.log("this state in trip for select", this.state)
+   /*  this.setState({
+      [name]: value
+    
+    }); */
+    this.setState(() => ({ place: target.value  }));
+   console.log("this state select", this.state.place)
+
+
   }
 
   render() {
-
+    let places = this.state.TblLocation;
+    console.log("places", places)
+    let optionItems = places.map((place) =>
+            <option key={place.ID} value={place.Place} name={place.Place}>{place.Place}</option>
+        );
     return (
       <form className="trip-form" onSubmit={this.props.handleSubmit}>
         <div className="trip-container">
@@ -59,12 +74,11 @@ class TripFrm extends Component {
             <div className="trip-text">Duration: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Duration" />
             <div className="trip-text">Place:</div>
-            <select value={this.state.editor} name="editor" onChange={this.handleChange} className="select-place">
-              <option value="Lake Murray">Lake Murray</option>
-              <option value="Lake Jennings">Lake Jennings</option>
-              <option value="Add">Add new Place...</option>
-            </select>
-            
+            <select className="select-place" value={this.props.value} name="Place" onChange={this.props.changeHandler}>
+             
+                 {optionItems}
+                 <option>Add New Place</option>
+             </select>
             <div className="trip-text">Notes: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Notes" />
             <div className="trip-text">Anglers: </div>

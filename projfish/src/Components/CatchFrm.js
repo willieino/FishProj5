@@ -48,7 +48,24 @@ class CatchFrm extends Component {
 
     return (
       <form className="catch-form" onSubmit={this.props.catchSubmit}>
-        <div className="catch-container"><div className="catch-header">Enter your Catch Info. Press Save when finished.</div>
+        <div className="catch-container"><div className="catch-header">
+        <div className="container-btn">
+            <div id="nav-cicon1" className="nav-icon-1" onClick={this.chartFishCaught}></div>
+            <button className="nav-button-n" value="chartFishCaught" onClick={this.chartFishCaught} name="chartFishCaught">Fish Info</button>
+          </div>
+          <div className="container-btn">
+            <div id="nav-cicon2" className="nav-icon-1" onClick={this.chartBaitType}></div>
+            <button className="nav-button-n" value="chartBaitType" onClick={this.chartBaitType} name="chartBaitType">Weather Info</button>
+          </div>
+          <div className="container-btn">
+            <div id="nav-cicon3" className="nav-icon-1" onClick={this.chartAngler}></div>
+            <button className="nav-button-n" value="chartAngler" onClick={this.chartAngler} name="chartAngler">Equipment Info</button>
+          </div>
+          <div className="container-btn">
+            <div id="nav-cicon4" className="nav-icon-1" onClick={this.chartRodType}></div>
+            <button className="nav-button-n" value="chartRodType" onClick={this.chartRodType} name="chartRodType">Environment Info</button>
+          </div>
+          </div>
           <div className="input-catch-container">
             <div className="catch-text">Trip Name:</div>
             <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Trip" />

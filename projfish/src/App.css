@@ -8,6 +8,7 @@
 
 body {
     background-color: rgb(15, 14, 83);
+    font-family: arial;
 }
 
 .App-header {
@@ -370,6 +371,8 @@ body {
     width: 200px;
 } */
 
+
+
 .nav-left-icon-1 {
     background-image: url('./Graphics/fish16.png');
     background-repeat: no-repeat;
@@ -382,6 +385,16 @@ body {
 
 .nav-left-icon-1:hover {
     background-image: url('./Graphics/fish15.png');
+}
+
+#icon1 {
+    background-image: url('./Graphics/fish16.png');
+    height: 48px;
+}
+
+#icon0 {
+    background-image: url('./Graphics/fish14.png');
+    height: 48px;
 }
 
 /* enter trip info */
@@ -444,6 +457,11 @@ body {
     height: 40px;
 } */
 
+#icon1:hover {
+    background-image: url('./Graphics/fish15.png');
+    height: 48px;
+}
+
 #icon2:hover {
     background-image: url('./Graphics/fish23.png');
 }
@@ -460,11 +478,11 @@ body {
     background-image: url('./Graphics/fish25.png');
 }
 
-/* #icon6:hover {
+ #icon0:hover {
     background-image: url('./Graphics/fish13.png');
 }
 
-#icon7:hover {
+/* #icon7:hover {
     background-image: url('./Graphics/fish10.png');
 }
 
@@ -474,7 +492,7 @@ body {
 
 #icon9:hover {
     background-image: url('./Graphics/fish14.png');
-} */
+}  */
 
 .save-trip-data {
     color: white;
@@ -533,19 +551,20 @@ body {
 
 .home-container {
     padding-left: 20px;
-background-image: url('./Graphics/lake.png');
-background-repeat: no-repeat;
-/* border: 2px solid white; */
-height: 700px;
-width: 1100px;
+background-image: url('./Graphics/murray.png');
+background-repeat: repeat;
+/* border: 2px solid white;  */
+height: 1200px;
+width: 1800px;
 }
 
 .instructions {
     border: 2px solid rgb(5, 29, 136);
     width: 750px;
-    background-color: rgba(17, 72, 97, 0.74);
+    background-color: rgba(17, 45, 97, 0.699);
     padding: 10px;
     border-radius: 10px;
+    font-weight: 200;
 }
 
 .title-h1 {
@@ -555,15 +574,15 @@ width: 1100px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 8px;
-    background-color: rgba(17, 72, 97, 0.74);
+    background-color: rgba(17, 54, 97, 0.74);
 }
 
 footer {
-    font-size: 12px;
-    width: 90px;
+    font-size: 14px;
+    width: 100px;
 }
 
 span {
-    color: yellow;
+   /*  color: yellow; */
 
 }

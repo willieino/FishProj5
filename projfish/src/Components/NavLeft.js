@@ -16,9 +16,13 @@ class NavLeft extends Component {
     return (
       <form className="nav-left">
         <ul className="nav-list">
+        <li className="nav-left-item">
+            <div id="icon0" className="nav-left-icon-1" onClick={this.props.viewHome}></div>
+            <button className="nav-button" value="ViewHome" onClick={this.props.viewHome} name="viewHome">Home</button>
+          </li>
           <li className="nav-left-item icon1">
             <div id="icon1" className="nav-left-icon-1" onClick={this.props.viewTripData}></div>
-            <button className="nav-button" value="ViewData" onClick={this.props.viewTripData} name="viewTripData">View Trips</button>
+            <button className="nav-button" value="ViewData" onClick={this.props.viewTripData} name="viewTripData">Trips</button>
           </li>
           <li className="nav-left-item">
             <div id="icon2" className="nav-left-icon-1" onClick={this.props.viewTripForm}></div>
@@ -26,7 +30,7 @@ class NavLeft extends Component {
           </li>
           <li className="nav-left-item">
             <div id="icon3" className="nav-left-icon-1" onClick={this.props.viewCatchData}></div>
-            <button className="nav-button" value="ViewCatchData" onClick={this.props.viewCatchData} name="viewCatchData">View Catches</button>
+            <button className="nav-button" value="ViewCatchData" onClick={this.props.viewCatchData} name="viewCatchData">Catches</button>
           </li>
           <li className="nav-left-item">
             <div id="icon4" className="nav-left-icon-1" onClick={this.props.viewCatchForm} ></div>
@@ -34,7 +38,7 @@ class NavLeft extends Component {
           </li>
           <li className="nav-left-item">
             <div id="icon5" className="nav-left-icon-1" onClick={this.props.viewCharts}></div>
-            <button className="nav-button" value="viewCharts" onClick={this.props.viewCharts} name="viewCharts">View Charts</button>
+            <button className="nav-button" value="viewCharts" onClick={this.props.viewCharts} name="viewCharts">Charts</button>
           </li>
          {/*  <li className="nav-left-item">
             <div  id="icon6" className="nav-left-icon-1"></div>

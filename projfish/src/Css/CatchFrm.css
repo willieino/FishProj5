@@ -87,3 +87,53 @@ width: 60%;
 height: 300px;
 
   }
+
+  #nav-cicon1 {
+    background-image: url('../Graphics/hook01.png');
+    width: 70px;
+}
+
+  #nav-cicon2 {
+    background-image: url('../Graphics/cloud02.png');
+    width: 70px;
+}
+
+/* By Angler */
+
+#nav-cicon3 {
+    background-image: url('../Graphics/boat1.png');
+    width: 80px;
+    /*  border: 2px solid blue; */
+}
+
+/* By Rod Type  */
+
+#nav-cicon4 {
+    background-image: url('../Graphics/wheel02.png');
+    width: 80px;
+}
+
+#nav-cicon1:hover {
+  background-image: url('../Graphics/hook02.png');
+  width: 70px;
+}
+
+#nav-cicon2:hover {
+  background-image: url('../Graphics/cloud01.png');
+  width: 70px;
+}
+
+/* By Angler */
+
+#nav-cicon3:hover {
+  background-image: url('../Graphics/boat2.png');
+  width: 80px;
+  /*  border: 2px solid blue; */
+}
+
+/* By Rod Type  */
+
+#nav-cicon4:hover {
+  background-image: url('../Graphics/wheel01.png');
+  width: 80px;
+}

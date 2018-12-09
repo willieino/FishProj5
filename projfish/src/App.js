@@ -21,7 +21,7 @@ class App extends Component {
       StartDate: null,
       ID: null,
       Trip: null,
-      Place: null,
+      Place: "",
       GPS1: "",
       GPS2: "",
       CatchTbl: [],
@@ -91,7 +91,16 @@ class App extends Component {
   changeHandler = (e) => {
 
     this.setState({ [e.target.name]: e.target.value });
-    //  console.log(this.state)
+     console.log(this.state)
+  }
+
+  viewHome = (e) => {
+    e.preventDefault();
+    localStorage.setItem('viewTrip', "home");
+    let pageType = `home`
+    this.setState({ viewTrip: pageType });
+    //console.log("viewTripForm", this.state)
+    //window.location.reload();
   }
 
   viewTripForm = (e) => {
@@ -225,7 +234,7 @@ class App extends Component {
       case 'catch':
         return <div className="App">
           <div className="main-container">
-            <NavLeft viewCatchData={this.viewCatchData} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <NavLeft viewCatchData={this.viewCatchData} viewHome={this.viewHome} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
             <div className="main-display">
               <CatchFrm changeHandler={this.changeHandler} catchSubmit={this.catchSubmit} ID={this.props.ID} Trip={this.props.Trip}
                 key={this.props.ID}
@@ -277,7 +286,7 @@ class App extends Component {
       case 'trip':
         return <div className="App">
           <div className="main-container">
-            <NavLeft viewCatchData={this.viewCatchData} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <NavLeft viewCatchData={this.viewCatchData} viewHome={this.viewHome} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
             <div className="main-display">
               <TableDisplay TripTbl={this.state.TripTbl} key={this.ID} Trip={this.props.Trip} StartDate={this.props.StartDate} Duration={this.props.Duration}
                 Place={this.props.Place} Photos={this.props.Photos} Notes={this.props.Notes} Anglers={this.props.Anglers} Gps1={this.props.GPS1} Gps2={this.props.GPS2} ImgCaption={this.props.ImgCaption} />
@@ -288,7 +297,7 @@ class App extends Component {
       case 'tripForm':
         return <div className="App">
           <div className="main-container">
-            <NavLeft viewCatchData={this.viewCatchData} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <NavLeft viewCatchData={this.viewCatchData} viewHome={this.viewHome} viewCharts={this.viewCharts} viewCatchForm={this.viewCatchForm} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
             <div className="main-display">
               <TripFrm handleSubmit={this.handleSubmit} TripTbl={this.state.TripTbl} key={this.ID} Trip={this.props.Trip} StartDate={this.props.StartDate} Duration={this.props.Duration}
                 changeHandler={this.changeHandler} Place={this.props.Place} Photos={this.props.Photos} Notes={this.props.Notes} Anglers={this.props.Anglers} GPS1={this.props.GPS1} GPS2={this.props.GPS2} ImgCaption={this.props.ImgCaption} />
@@ -299,7 +308,7 @@ class App extends Component {
       case 'catchTable':
         return <div className="App">
           <div className="main-container">
-            <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <NavLeft viewCatchForm={this.viewCatchForm} viewHome={this.viewHome} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
             <div className="main-display">
               <CatchTableDisplay viewCatchTableData={this.viewCatchData} />
             </div>
@@ -309,7 +318,7 @@ class App extends Component {
       case 'charts':
         return <div className="App">
           <div className="main-container">
-            <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <NavLeft viewCatchForm={this.viewCatchForm} viewHome={this.viewHome} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
             <div className="main-display">
               <Charts />
             </div>

@@ -180,8 +180,9 @@ body {
 .trip-container {
     display: flex;
     flex-direction: row;
-    /*  border: 2px solid green;    */
-    height: 800px;
+       /*  border: 2px solid green;   */
+    height: 1000px;
+    width:  100%;
 }
 
 .trip-header {
@@ -212,11 +213,11 @@ body {
 
 .trip-form {
     /* border: 2px solid white;   */
-    width: 800px;
+    width: 900px;
 }
 
 .input-container {
-    /*  border: 2px solid yellow;   */
+     /*  border: 2px solid yellow;  */ 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -335,8 +336,8 @@ body {
     flex-direction: row;
 } */
 
-.catch-table-display { 
-    width: 3000px;
+.catch-table-display {
+    width: 4000px;
     /* border: 2px solid green; */
 }
 
@@ -370,8 +371,6 @@ body {
 /* #catchNotes {
     width: 200px;
 } */
-
-
 
 .nav-left-icon-1 {
     background-image: url('./Graphics/fish16.png');
@@ -441,6 +440,7 @@ body {
     height: 50px;
 }
  */
+
 /* print */
 
 /* #icon8 {
@@ -478,7 +478,7 @@ body {
     background-image: url('./Graphics/fish25.png');
 }
 
- #icon0:hover {
+#icon0:hover {
     background-image: url('./Graphics/fish13.png');
 }
 
@@ -513,7 +513,7 @@ body {
 .container-btn {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid red; */
+    /*  border: 2px solid red;  */
 }
 
 #file-upload {
@@ -531,16 +531,21 @@ body {
 .new-table {
     border: 2px solid green;
     height: 900px;
-    width: 5000px;
+    width: 5200px;
     background-color: white;
     color: black;
     font-size: 14px;
     text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /*  overflow: auto; */
+    /* height: 80px; */
+    white-space: nowrap;
 }
 
 .new-trip-table {
     /*  border: 2px solid green; */
-    height: 410px;
+    height: 610px;
     width: 1400px;
     background-color: white;
     color: black;
@@ -549,13 +554,21 @@ body {
     font-weight: 500;
 }
 
+.test-btn {
+    background-image: url('./Graphics/save_btn.png');
+    width: 250px;
+    height: 100px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
 .home-container {
     padding-left: 20px;
-background-image: url('./Graphics/murray.png');
-background-repeat: repeat;
-/* border: 2px solid white;  */
-height: 1200px;
-width: 1800px;
+    background-image: url('./Graphics/murray.png');
+    background-repeat: repeat;
+    /* border: 2px solid white;  */
+    height: 1200px;
+    width: 1800px;
 }
 
 .instructions {
@@ -583,6 +596,59 @@ footer {
 }
 
 span {
-   /*  color: yellow; */
+    /*  color: yellow; */
+}
 
+.button-cluster {
+    display: flex;
+    flex-direction: row;
+    width: 520px;
+     /* border: 2px solid orange; */
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.prev-btn {
+    width: 203px;
+    height: 225px;
+    background-image: url('./Graphics/prev_off.png');
+}
+
+.save-btn {
+    width: 123px;
+    height: 225px;
+    background-image: url('./Graphics/save_off.png');
+}
+
+.next-btn {
+    width: 194px;
+    height: 225px;
+    background-image: url('./Graphics/next_off.png');
+}
+
+/***************** hover btn *****************/
+
+.prev-btn:hover {
+    background-image: url('./Graphics/prev_hover.png');
+}
+
+.save-btn:hover {
+    background-image: url('./Graphics/save_on.png');
+}
+
+.next-btn:hover {
+    background-image: url('./Graphics/next_hover.png');
+}
+
+/***************** depressed btn *****************/
+
+.prev-btn:active {
+    background-image: url('./Graphics/prev_select.png');
+}
+
+.next-btn:active {
+    background-image: url('./Graphics/next_select.png');
+}
+
+.save-btn:active {
+    background-image: url('./Graphics/save_select.png');
 }

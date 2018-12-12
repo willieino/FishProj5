@@ -1,7 +1,15 @@
 const tblLineStyle = [
       {
             ID: 1,
-            LineStyle: "Braid"
+            LineStyle: "Monofilament"
+      },
+      {
+            ID: 2,
+            LineStyle: "Fluorocarbon"
+      },
+      {
+            ID: 3,
+            LineStyle: "Braided"
       }
 ]
 

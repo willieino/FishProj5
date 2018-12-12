@@ -4,7 +4,7 @@ import CatchTbl from "../Tables/catchTbl"
 import '../App.css';
 import ReactTable from "react-table"; 
 import "react-table/react-table.css";
-import { render } from "react-dom";
+//import { render } from "react-dom";
 //import CatchHeaders from "../Tables/catchHeaders";
 
 class CatchTableDisplay extends Component {
@@ -95,10 +95,10 @@ class CatchTableDisplay extends Component {
         { Header: "Angler", accessor: "Angler", Cell: this.renderEditable},
         { Header: "Qty", accessor: "Quantity", Cell: this.renderEditable, width: 75},
         { Header: "Weight", accessor: "Weight", Cell: this.renderEditable, width: 75},
-        { Header: "Trip", accessor: "Trip", Cell: this.renderEditable},
-        { Header: "Catch Date", accessor: "CatchDate", Cell: this.renderEditable},
-        { Header: "Fight Time", accessor: "FightTime", Cell: this.renderEditable},
-        { Header: "Outcome", accessor: "Outcome",Cell: this.renderEditable },
+         { Header: "Length", accessor: "Length", Cell: this.renderEditable, width: 75}, 
+         { Header: "Girth", accessor: "Girth", Cell: this.renderEditable, width: 75}, 
+        { Header: "Fight Time", accessor: "FightTime", Cell: this.renderEditable, width: 85},
+        { Header: "Outcome", accessor: "Outcome",Cell: this.renderEditable, width: 85 },
         { Header: "Fishing Style", accessor: "Style", Cell: this.renderEditable, width: 100},
         { Header: "Bait Type", accessor: "Bait", Cell: this.renderEditable },
         { Header: "Bait Color", accessor: "BaitColor", Cell: this.renderEditable, width: 100},
@@ -125,10 +125,10 @@ class CatchTableDisplay extends Component {
         { Header: "Hook Type", accessor: "HookType", Cell: this.renderEditable, width: 100},
         { Header: "Sinker Weight", accessor: "SinkerWeight", Cell: this.renderEditable, width: 100},      
         { Header: "Sinker Type", accessor: "SinkerStyle", Cell: this.renderEditable, width: 100},
-        { Header: "Line Test(Lb.)", accessor: "LineTest", Cell: this.renderEditable},
-        { Header: "Line Type", accessor: "LineStyle", Cell: this.renderEditable},
+        { Header: "Line Test(Lb.)", accessor: "LineTest", Cell: this.renderEditable, width: 110},
+        { Header: "Line Type", accessor: "LineStyle", Cell: this.renderEditable, width: 90},
         { Header: "Line Color", accessor: "LineColor", Cell: this.renderEditable, width: 100},
-        { Header: "Image Caption", accessor: "ImgCaption", Cell: this.renderEditable, width: 100},
+        { Header: "Image Caption", accessor: "ImgCaption", Cell: this.renderEditable, width: 140},
         { Header: "Image", accessor: "Photo", Cell: this.renderEditable },   
     ]}
        defaultPageSize={10}

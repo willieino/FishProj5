@@ -16,7 +16,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      viewTrip: "trip",
+      viewTrip: "home",
       TripTbl: [],
       StartDate: null,
       ID: null,
@@ -91,7 +91,7 @@ class App extends Component {
   changeHandler = (e) => {
 
     this.setState({ [e.target.name]: e.target.value });
-     console.log(this.state)
+    console.log(this.state)
   }
 
   viewHome = (e) => {
@@ -325,15 +325,15 @@ class App extends Component {
           </div>
         </div>;
 
-case 'home':
-return <div className="App">
-  <div className="main-container">
-    <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
-    <div className="main-display">
-      <Home />
-    </div>
-  </div>
-</div>;
+      case 'home':
+        return <div className="App">
+          <div className="main-container">
+            <NavLeft viewCatchForm={this.viewCatchForm} viewCharts={this.viewCharts} viewCatchData={this.viewCatchData} viewTripData={this.viewTripData} handleSubmit={this.handleSubmit} viewTrip={this.props.viewTrip} enterTrip={this.props.enterTrip} viewTripForm={this.viewTripForm} />
+            <div className="main-display">
+              <Home />
+            </div>
+          </div>
+        </div>;
 
     };
   }

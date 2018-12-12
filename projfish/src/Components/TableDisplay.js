@@ -4,7 +4,7 @@ import TripTbl from "../Tables/tripTbl";
 import '../App.css';
 //import TripHeaders from "../Tables/tripHeaders";
 import ReactTable from "react-table";
-import { render } from "react-dom";
+//import { render } from "react-dom";
 import "react-table/react-table.css";
 
 class TableDisplay extends Component {
@@ -75,9 +75,9 @@ class TableDisplay extends Component {
 
 /* export default TripHeaders; */
 
-            defaultPageSize={10}
+            defaultPageSize={20}
             style={{
-              height: "400px" 
+              height: "600px" 
             }}
             className="-striped -highlight"
           /></div> </div>

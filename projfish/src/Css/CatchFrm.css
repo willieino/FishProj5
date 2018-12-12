@@ -1,139 +1,216 @@
 .catch-form {
-background-color: rgb(15, 14, 83);
-color: white;
-/* border: 2px solid red; */
-width: 800px;
-min-width: 800px;
+    background-color: rgb(15, 14, 83);
+    color: white;
+    border: 2px solid red;
+    width: 1200px;
+    min-width: 800px;
 }
 
 .catch-container {
-  /*  border: 2px solid green;  */
-width: 100%;
-
+    /* border: 2px solid green; */
+    width: 100%;
 }
-
 
 .input-catch-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-     /* border: 2px solid white;  */
+    /* border: 2px solid white;  */
     width: 100%;
     text-align: left;
     margin-left: 10px;
     height: 1200px;
 }
 
-.catch-header {
-/* border: 2px solid blue; */
-background-color: rgb(42, 167, 224);
-width: 100%;
+.nav-button-o {
+    color: white;
+    font-size: 12px;
+    background-color: rgb(42, 167, 224);
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    border: 0px solid green;
+    text-align: center;
+    width: 115px;
+}
 
+.catch-header {
+    /*  border: 2px solid blue;  */
+    background-color: rgb(42, 167, 224);
+    width: 100%;
 }
 
 .catch {
-width: 47%;
-color: white;
-background-color: rgb(16, 14, 148);
-border: 1px solid gray;
+    width: 75%;
+    color: white;
+    background-color: rgb(16, 14, 148);
+    border: 1px solid gray;
 }
 
 .catch:hover {
-  width: 47%;
-  color: white;
-  background-color: rgb(33, 30, 211);
-  border: 1px solid gray;
-  }
-
-.catch-text {
-
-
+    background-color: rgb(33, 30, 211);
 }
+
+.catch-text {}
+
 .catch-text:hover {
-color: yellow;
-
+    color: yellow;
 }
-.select-place {
-width: 30%;
 
+.select-place {
+    width: 30%;
 }
 
 .save-catch-data {
-color: white;
-width: 47%;
-margin-top: 20px;
-height: 40px;
-background-color: rgb(44, 44, 168);
-
+    color: white;
+    width: 30%;
+    margin-top: 20px;
+    height: 40px;
+    background-color: rgb(44, 44, 168);
 }
 
 .save-catch-data:hover {
-  background-color: rgb(26, 6, 199);
+    background-color: rgb(26, 6, 199);
 }
 
 .charts {
- /*  border: 2px solid red; */
-  width: 200px;
-  height: 2000px;
-  left: 200px;
-  top: 200px;
-
-  
-  }
-
-  .chart-container {
-width: 60%;
-/* background-color: red; */
-height: 300px;
-
-  }
-
-  #nav-cicon1 {
-    background-image: url('../Graphics/hook01.png');
-    width: 70px;
+    /*  border: 2px solid red; */
+    width: 200px;
+    height: 2000px;
+    left: 200px;
+    top: 200px;
 }
 
-  #nav-cicon2 {
-    background-image: url('../Graphics/cloud02.png');
+.chart-container {
+    width: 60%;
+    /* background-color: red; */
+    height: 300px;
+}
+
+.select-lunarphase {
+    width: 47%;
+    background-color: rgb(16, 14, 148);
+    border: 1px solid gray;
+    color: white;
+    /*  margin-left: 10px; */
+}
+
+.nav-catch-icon-1 {
+    background-image: url('../Graphics/fish17.png');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid black;  */
+}
+
+.nav-catch-icon-1:hover {
+    background-image: url('../Graphics/fish20.png');
+}
+
+#nav-dicon1 {
+    background-image: url('../Graphics/cod01.png');
+    width: 120px;
+    cursor: pointer;
+}
+
+#nav-dicon2 {
+    background-image: url('../Graphics/cloud03.png');
     width: 70px;
+    cursor: pointer;
 }
 
 /* By Angler */
 
-#nav-cicon3 {
-    background-image: url('../Graphics/boat1.png');
-    width: 80px;
+#nav-dicon3 {
+    background-image: url('../Graphics/meter01.png');
+    width: 60px;
+    cursor: pointer;
     /*  border: 2px solid blue; */
 }
 
 /* By Rod Type  */
 
-#nav-cicon4 {
-    background-image: url('../Graphics/wheel02.png');
-    width: 80px;
+#nav-dicon4 {
+    background-image: url('../Graphics/manBoat01.png');
+    width: 110px;
+    cursor: pointer;
 }
 
-#nav-cicon1:hover {
-  background-image: url('../Graphics/hook02.png');
-  width: 70px;
+#nav-dicon5 {
+    background-image: url('../Graphics/hook01.png');
+    width: 70px;
+    cursor: pointer;
 }
 
-#nav-cicon2:hover {
-  background-image: url('../Graphics/cloud01.png');
-  width: 70px;
+#nav-dicon1:hover {
+    background-image: url('../Graphics/cod04.png');
+}
+
+#nav-dicon2:hover {
+    background-image: url('../Graphics/cloud04.png');
+    width: 70px;
 }
 
 /* By Angler */
 
-#nav-cicon3:hover {
-  background-image: url('../Graphics/boat2.png');
-  width: 80px;
-  /*  border: 2px solid blue; */
+#nav-dicon3:hover {
+    background-image: url('../Graphics/meter02.png');
+    /*  border: 2px solid blue; */
 }
 
 /* By Rod Type  */
 
-#nav-cicon4:hover {
-  background-image: url('../Graphics/wheel01.png');
-  width: 80px;
+#nav-dicon4:hover {
+    background-image: url('../Graphics/manBoat04.png');
+}
+
+#nav-dicon5:hover {
+    background-image: url('../Graphics/hook06.png');
+}
+
+.fishSection {
+    border: 2px solid blue;
+    width: 70%;
+    /* display: none; */
+}
+
+.weatherSection {
+    border: 2px solid green;
+    width: 30%;
+    display: none;
+}
+
+.equipmentSection {
+    border: 2px solid yellow;
+    width: 30%;
+    display: none;
+}
+
+.photoSection {
+    border: 2px solid aqua;
+    height: 800px;
+    display: none;  
+}
+
+
+
+.visible {
+    display: flex;
+}
+
+
+
+#file-upload {
+    width: 40%;
+}
+
+.image-holder {
+    margin-top: 20px;
+    width: 75%;
+    height: 500px;
+    background-color: rgb(36, 39, 43);
+    border: 2px solid gray;
 }

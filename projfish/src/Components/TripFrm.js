@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TripTbl from "../Tables/tripTbl" 
 import '../App.css';
-import Place from "./Place";
+//import Place from "./Place";
 import TblLocation from "../Tables/tblLocation";
 
 class TripFrm extends Component {
@@ -92,7 +92,7 @@ class TripFrm extends Component {
             <div className="trip-text">Image Caption: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
             <button className="save-trip-data" value="SaveTripData" onClick={this.props.handleSubmit} name="SaveTripData">Save Changes</button>
-           
+           <div className="button-cluster"><div className="prev-btn"></div><div className="save-btn" onClick={this.props.handleSubmit}></div><div className="next-btn"></div></div>
           </div>
         </div>
       </form>

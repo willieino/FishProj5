@@ -24,7 +24,7 @@ class TableRow extends Component {
     let classNames = require('classnames');
     let temp = this.props.id;
     ((temp % 2) === 0)? temp = false: temp = true;
-   // console.log("temp", temp)
+   
 		let tableRow = classNames({
 			'column': true,
 			'hi-lite': temp

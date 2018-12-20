@@ -671,7 +671,7 @@ class Charts extends Component {
             <button className="nav-button-n" value="chartLineColor" onClick={this.chartLineColor} name="chartLineColor">By Line Color</button>
           </div>
         </form></div>
-        <div className="charts"><div className="chart-type">{this.state.chartType}</div>
+        <div className="charts"><h3>Select a chart from above</h3><div className="chart-type">{this.state.chartType}</div>
           <div className="chart-container2">
             <BarChart width={650} height={400} data={this.state.fishy}>
               <Tooltip />

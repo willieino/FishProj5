@@ -135,6 +135,7 @@ class CatchTableDisplay extends Component {
        style={{
          height: "400px"
        }}
+      
        className="-striped -highlight"
      /></div> </div>
     );

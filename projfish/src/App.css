@@ -155,9 +155,9 @@ body {
 }
 
 .trip {
-    width: 60%;
-    color: rgb(252, 248, 248);
-    background-color: rgb(16, 14, 148);
+    width: 95%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     border: 1px solid gray;
     padding-bottom: 4px;
     margin-left: 10px;
@@ -179,14 +179,14 @@ body {
 
 .trip-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
        /*  border: 2px solid green;   */
     height: 1000px;
     width:  100%;
 }
 
 .trip-header {
-    /* border: 2px solid brown;  */
+    /*  border: 2px solid brown;  */
     background-color: rgb(42, 167, 224);
     padding-top: 4px;
     padding-bottom: 4px;
@@ -213,17 +213,19 @@ body {
 
 .trip-form {
     /* border: 2px solid white;   */
-    width: 900px;
+    width: 700px;
 }
 
 .input-container {
-     /*  border: 2px solid yellow;  */ 
+      /*  border: 2px solid yellow;    */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: auto;
-    width: 100%;
-    background-color: rgb(15, 14, 83);
+    width: 400px;
+    margin-top: 40px;
+    margin-left: 40px;
+    background-color: rgb(104, 60, 3);
 }
 
 .input-side-container {
@@ -237,38 +239,7 @@ body {
     height: 50px;
 }
 
-/* .column {
-    border: 1px solid rgba(128, 128, 128, 0.555);
-    width: 100px;
-    font-size: 12px;
-    text-align: center;
-    background-color: rgb(10, 9, 58);
-} */
 
-/* .column:hover {
-    background-color: rgb(42, 167, 224);
-} */
-
-/* .column2 {
-    border: 1px solid rgba(128, 128, 128, 0.555);
-    width: 65px;
-    font-size: 12px;
-    text-align: center;
-    background-color: rgb(10, 9, 58);
-} */
-
-/* .table-row {
-    display: flex;
-    flex-direction: row;
-} */
-
-/* .hi-lite {
-    background-color: rgb(57, 84, 207);
-} */
-
-/* .hi-lite:hover {
-    background-color: rgb(42, 167, 224);
-} */
 
 .trip-text {
     padding-top: 6px;
@@ -285,18 +256,7 @@ body {
     width: 100%;
 }
 
-/* #photos {
-    width: 180px;
-}
 
-#caption {
-    width: 180px;
-}
-
-#id {
-    width: 40px;
-    text-align: center;
-} */
 
 .select {
     height: 26px;
@@ -305,18 +265,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* .text-save {
-    display: inline-block;
-    position: relative;
-    font-size: 16px;
-    left: 0px;
-    top: 0px;
-    cursor: pointer;
-} */
 
-/* .text-save:hover {
-    font-size: 16px;
-} */
 
 .nav-left-item,
 .icon1 {
@@ -324,53 +273,20 @@ body {
 }
 
 .select-place {
-    width: 80%;
-    background-color: rgb(16, 14, 148);
+    width: 90%;
+    height: 34px;
+    background-color: rgb(55, 54, 114);
     border: 1px solid gray;
     color: white;
     margin-left: 10px;
 }
 
-/* .catch-table-row {
-    display: flex;
-    flex-direction: row;
-} */
+
 
 .catch-table-display {
     width: 4000px;
     /* border: 2px solid green; */
 }
-
-/* #catchDate,
-#tripName,
-#location,
-.catchs,
-#notes,
-.lunarPhase,
-#rod,
-#reel {
-    width: 120px;
-} */
-
-/* #angler,
-.angler,
-#fish-style,
-.windDirection,
-#wind,
-.bottom,
-#sinkerStyle,
-.species {
-    width: 90px;
-} */
-
-/* #notes,
-#imgCaption {
-    width: 160px;
-} */
-
-/* #catchNotes {
-    width: 200px;
-} */
 
 .nav-left-icon-1 {
     background-image: url('./Graphics/fish16.png');
@@ -425,37 +341,11 @@ body {
     height: 50px;
 }
 
-/* clear fields */
-
-/* #icon6 {
-    background-image: url('./Graphics/fish14.png');
-    height: 40px;
-} */
-
-/* cancal changes */
-
-/* #icon7 {
-    background-image: url('./Graphics/fish9.png');
-    width: 120px;
-    height: 50px;
-}
- */
-
-/* print */
-
-/* #icon8 {
-    background-image: url('./Graphics/fish7.png');
-    width: 120px;
-    height: 50px;
-} */
-
-/* logout */
-
-/* #icon9 {
-    background-image: url('./Graphics/fish13.png');
+#icon6 {
+    background-image: url('./Graphics/jig01.png');
     width: 140px;
-    height: 40px;
-} */
+    height: 60px;
+}
 
 #icon1:hover {
     background-image: url('./Graphics/fish15.png');
@@ -478,28 +368,21 @@ body {
     background-image: url('./Graphics/fish25.png');
 }
 
+#icon6:hover {
+    background-image: url('./Graphics/jig02.png'); 
+}
+
 #icon0:hover {
     background-image: url('./Graphics/fish13.png');
 }
 
-/* #icon7:hover {
-    background-image: url('./Graphics/fish10.png');
-}
-
-#icon8:hover {
-    background-image: url('./Graphics/fish8.png');
-}
-
-#icon9:hover {
-    background-image: url('./Graphics/fish14.png');
-}  */
-
 .save-trip-data {
     color: white;
-    width: 60%;
+    width: 95%;
     margin-left: 10px;
     margin-top: 20px;
     height: 40px;
+    margin-bottom: 20px;
     background-color: rgb(57, 84, 207);
     border: 2px solid rgb(237, 236, 240);
 }
@@ -600,7 +483,7 @@ span {
 }
 
 .button-cluster {
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 520px;
      /* border: 2px solid orange; */

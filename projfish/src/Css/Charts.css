@@ -82,16 +82,16 @@
 /* By Angler */
 
 #cicon3 {
-    background-image: url('../Graphics/bars1.png');
-    width: 80px;
+    background-image: url('../Graphics/bars01.png');
+    width: 90px;
     /*  border: 2px solid blue; */
 }
 
 /* By Rod Type  */
 
 #cicon4 {
-    background-image: url('../Graphics/bars1.png');
-    width: 80px;
+    background-image: url('../Graphics/bars04.png');
+    width: 90px;
 }
 
 /* By Line Type */
@@ -218,11 +218,11 @@
 }
 
 #cicon3:hover {
-    background-image: url('../Graphics/bars2.png');
+    background-image: url('../Graphics/bars02.png');
 }
 
 #cicon4:hover {
-    background-image: url('../Graphics/bars2.png');
+    background-image: url('../Graphics/bars03.png');
 }
 
 #cicon5:hover {

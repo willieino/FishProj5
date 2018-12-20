@@ -65,8 +65,9 @@ class TripFrm extends Component {
     return (
       <form className="trip-form" onSubmit={this.props.handleSubmit}>
         <div className="trip-container">
+        <div className="trip-header">Enter your trip data. Press Save when finished.</div>
           <div className="input-container"> 
-            <div className="trip-header">Enter your trip data. Press Save when finished.</div>
+            
             <div className="trip-text">Trip Name: </div>
             <input type="text" id="dragMe" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Trip" />
             <div className="trip-text">Start Date: </div>
@@ -92,7 +93,11 @@ class TripFrm extends Component {
             <div className="trip-text">Image Caption: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
             <button className="save-trip-data" value="SaveTripData" onClick={this.props.handleSubmit} name="SaveTripData">Save Changes</button>
-           <div className="button-cluster"><div className="prev-btn"></div><div className="save-btn" onClick={this.props.handleSubmit}></div><div className="next-btn"></div></div>
+           <div className="button-cluster">
+           <div className="prev-btn"></div>
+           <div className="save-btn" onClick={this.props.handleSubmit}></div>
+           <div className="next-btn"></div>
+           </div>
           </div>
         </div>
       </form>

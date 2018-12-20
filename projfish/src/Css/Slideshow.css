@@ -1,0 +1,60 @@
+.slideshow {
+    display: flex;
+    flex-direction: column;
+    width: 1020px;
+    height: 600px;
+}
+
+.slide {
+    width: 1020px;
+    height: 480px;
+    border: 2px solid red;
+    background-color: teal;
+}
+
+.prev-btn {
+    width: 40px;
+    height: 30px;
+    background-color: aqua;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.next-btn {
+    width: 40px;
+    height: 30px;
+    background-color: aqua;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.start-btn {
+    width: 40px;
+    height: 30px;
+    background-color: aqua;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.close-btn {
+    width: 40px;
+    height: 30px;
+    background-color: aqua;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.slide-btn-container {
+    display: flex;
+    flex-direction: row;
+    width: 180px;
+    height: 30px;
+    border: 2px solid white;
+}
+
+
+.slides {
+    width: 500px;
+    height: 300px;
+    border: 2px solid blue;
+}

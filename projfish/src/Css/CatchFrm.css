@@ -1,7 +1,7 @@
 .catch-form {
     background-color: rgb(15, 14, 83);
     color: white;
-    border: 2px solid red;
+   /*  border: 2px solid red; */
     width: 1200px;
     min-width: 800px;
 }
@@ -42,7 +42,8 @@
 }
 
 .catch {
-    width: 75%;
+    width: 95%;
+    /* margin-left: 8px; */
     color: white;
     background-color: rgb(16, 14, 148);
     border: 1px solid gray;
@@ -58,9 +59,9 @@
     color: yellow;
 }
 
-.select-place {
+/* .select-place {
     width: 30%;
-}
+} */
 
 .save-catch-data {
     color: white;
@@ -89,10 +90,12 @@
 }
 
 .select-lunarphase {
-    width: 47%;
-    background-color: rgb(16, 14, 148);
+    width: 90%;
+    background-color: rgb(55, 54, 114);
     border: 1px solid gray;
     color: white;
+    /* margin-left: 8px; */
+    height: 30px;
     /*  margin-left: 10px; */
 }
 
@@ -172,27 +175,58 @@
 }
 
 .fishSection {
-    border: 2px solid blue;
-    width: 70%;
+    /* border: 2px solid blue; */
+    padding-left: 8px;
+   /*  border: 2px solid green; */
+    margin-top: 20px;
+    padding-bottom: 10px; 
+    width: 24%;
+    background-color: rgb(51, 51, 79);
+    /* background-image: url('../Graphics/bass-1024.jpg'); */
+    
     /* display: none; */
 }
-
+h3 {
+text-align: center;
+}
 .weatherSection {
-    border: 2px solid green;
-    width: 30%;
-    display: none;
+    padding-left: 8px;
+   /*  border: 2px solid green; */
+    margin-top: 20px;
+    padding-bottom: 10px;
+    width: 24%;
+    background-color: rgb(55, 79, 127);
+  /* background-image: url('../Graphics/m1.jpg');  */ 
+  background-position: -140px 0px;   
+  /* display: none; */
 }
 
 .equipmentSection {
-    border: 2px solid yellow;
-    width: 30%;
-    display: none;
+   /*  border: 2px solid yellow; */
+   padding-left: 8px;
+    margin-top: 24px;
+    padding-bottom: 10px; 
+    color: white;
+    margin-top: 20px;
+    background-color: rgba(125, 159, 205);
+    width: 24%;
+   /*   background-image: url('../Graphics/lake_prt.png'); */
+     background-position: 00px 0px; 
+  /*   display: none; */
 }
 
 .photoSection {
-    border: 2px solid aqua;
-    height: 800px;
-    display: none;  
+  /*   border: 2px solid aqua; */
+  padding-left: 8px;
+  margin-top: 20px;
+  padding-bottom: 10px;  
+  height: 400px;
+    margin-top: 20px;
+    width: 24%;
+    background-color: rgb(184, 207, 251);
+    /* background-image: url('../Graphics/bass_night.png'); */
+    background-position: 260px 0px; 
+   /*  display: none; */  
 }
 
 
@@ -204,13 +238,13 @@
 
 
 #file-upload {
-    width: 40%;
+    width: 94%;
 }
 
 .image-holder {
     margin-top: 20px;
     width: 75%;
-    height: 500px;
-    background-color: rgb(36, 39, 43);
+    height: 150px;
+    /* background-color: rgb(36, 39, 43); */
     border: 2px solid gray;
 }

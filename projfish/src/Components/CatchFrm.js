@@ -4,6 +4,7 @@ import TblHookType from "../Tables/tblHookType";
 import TblLineColor from "../Tables/tblLineColor";
 import TblSpecies from "../Tables/tblSpecies";
 import TblLineStyle from "../Tables/tblLineStyle";
+import TblLineTest from "../Tables/tblLineTest";
 import TblSinkerWeight from "../Tables/tblSinkerWeight";
 import TblSinkerStyle from "../Tables/tblSinkerStyle";
 import TblHookSize from "../Tables/tblHookSize";
@@ -41,6 +42,7 @@ class CatchFrm extends Component {
       TblHookType: [],
       TblLineColor: [],
       TblLineStyle: [],
+      TblLineTest: [],
       TblHookSize: [],
       TblSky: [],
       TblBait: [],
@@ -69,6 +71,7 @@ class CatchFrm extends Component {
     const bait = TblBait;
     const baitColor = TblBaitColor;
     const outcome = TblOutcome;
+    
 
     this.setState(() => ({
       currentSection: section,
@@ -82,6 +85,7 @@ class CatchFrm extends Component {
       TblHookSize: hookSize,
       TblSinkerWeight: sinkerWeight,
       TblSinkerStyle: sinkerStyle,
+      TblLineTest: TblLineTest,
       TblSky: sky,
       TblBait: bait,
       TblBaitColor: baitColor,
@@ -160,6 +164,10 @@ class CatchFrm extends Component {
     let currentOutcome = this.state.TblOutcome;
     let optionItems13 = currentOutcome.map((item) =>
       <option key={item.ID} value={item.Outcome}>{item.Outcome}</option>
+    );
+    let currentLineTest = this.state.TblLineTest;
+    let optionItems14 = currentLineTest.map((item) =>
+      <option key={item.ID} value={item.LineTest}>{item.LineTest}</option>
     );
     return (
       <form className="catch-form" onSubmit={this.props.catchSubmit}>
@@ -294,7 +302,10 @@ class CatchFrm extends Component {
               </select>
               {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="SinkerStyler" /> */}
               <div className="catch-text">Line Test:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="LineTest" />
+              <select className="select-lunarphase" value={this.props.value} name="LineTest" onChange={this.props.handleChange}>
+                {optionItems14}
+              </select>
+              {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="LineTest" /> */}
               <div className="catch-text">Line Style:</div>
               <select className="select-lunarphase" value={this.props.value} name="LineStyle" onChange={this.props.handleChange}>
                 {optionItems3}

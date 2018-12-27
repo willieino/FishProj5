@@ -78,7 +78,7 @@ class TripFrm extends Component {
             <select className="select-place" value={this.props.value} name="Place" onChange={this.props.changeHandler}>
              
                  {optionItems}
-                 <option>Add New Place</option>
+                 <option className="selected-option">Add New Place</option>
              </select>
             <div className="trip-text">Notes: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Notes" />

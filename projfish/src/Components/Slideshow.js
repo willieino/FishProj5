@@ -1,15 +1,75 @@
 import React from 'react';
 import '../Css/Slideshow.css'
 import ImageGallery from 'react-image-gallery';
+import { Slide } from 'react-slideshow-image';
+import { Zoom } from 'react-slideshow-image';
 
-class Slideshow extends React.Component {
+//class Slideshow extends React.Component {
  
-  render() {
+
+  const images = [
+    'http://lorempixel.com/1000/600/nature/3/',
+    'http://lorempixel.com/1000/600/nature/2/'
+   ];
+   
+  const properties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: true,
+    arrows: true
+  }
+
+  const zoomOutProperties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: true,
+    scale: 0.4,
+    arrows: true
+  }
+  
+  
+  const Slideshow = () => {
+    return (
+      <div className="new-slide">
+      <Zoom {...zoomOutProperties}>
+        {
+          images.map((each, index) => <img  className="slideshow" key={index} style={{width: "100%"}} src={each} />)
+        }
+      </Zoom>
+      </div>
+    )
+}
+/*   const Slideshow = () => {
+      return (
+        <Slide {...properties}>
+          <div className="each-slide">
+            <div className="new-slide" style={{'background-image': `url(${'http://i.4cdn.org/hr/1518039485750.jpg'})`}}>
+              <span>Slide 1</span>
+            </div>
+          </div>
+          <div className="each-slide">
+            <div className="new-slide">
+              <span>Slide 2</span>
+            </div>
+          </div>
+          <div className="each-slide">
+            <div style={{'background-image': `url(${slideImages[2]})`}}>
+              <span>Slide 3</span>
+            </div>
+          </div>
+        </Slide>
+      )
+  } */
+
+  Slideshow()
  
-    const images = [
+
+   /*  const images = [
       {
-        original: '/slide1.jpg',
-        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+        original: 'http://i.4cdn.org/hr/1518039485750/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/'
       },
       {
         original: 'http://lorempixel.com/1000/600/nature/2/',
@@ -26,7 +86,7 @@ class Slideshow extends React.Component {
     );
   }
  
-}
+} */
 /* const zoomOutProperties = {
   duration: 5000,
   transitionDuration: 500,
@@ -47,21 +107,21 @@ class Slideshow extends React.Component {
 } */
   
  
-  /* const slideImages = [
+  /*  const slideImages = [
     'images/slide_2.jpg',
     'images/slide_3.jpg',
     'images/slide_4.jpg'
-  ]; */
+  ]; 
    
-   /* const properties = {
+    const properties = {
     duration: 5000,
     transitionDuration: 500,
     infinite: true,
     indicators: true,
     arrows: true
-  } */
+  } 
    
-  /* const Slideshow = () => {
+   const Slideshow = () => {
       return (
         <Slide {...properties}>
           <div className="each-slide">
@@ -83,12 +143,13 @@ class Slideshow extends React.Component {
       )
   } 
   
-  return (
+   
 
     Slideshow()
-  )  */
-    
- /*    return (
+
+      */
+
+   /*   return (
     <div className="slideshow">
     <div className="slide"></div>
     
@@ -100,6 +161,6 @@ class Slideshow extends React.Component {
     </div>
      
     </div>
-  ); */
+  ) */ 
 
 export default Slideshow;

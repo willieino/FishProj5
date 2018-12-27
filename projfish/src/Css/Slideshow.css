@@ -1,15 +1,16 @@
 .slideshow {
-    display: flex;
-    flex-direction: column;
-    width: 1020px;
+    /* display: flex; */
+   /*  flex-direction: column; */
+    width: 800px;
     height: 600px;
+    /* border: 2px solid yellow; */
 }
 
 .slide {
     width: 1020px;
     height: 480px;
     border: 2px solid red;
-    background-color: teal;
+    /* background-color: teal; */
 }
 
 .prev-btn {
@@ -52,6 +53,17 @@
     border: 2px solid white;
 }
 
+.new-slide {
+    width: 800px;
+    height: 600px;
+   /*  border: 2px solid green; */
+}
+
+.each-slide {
+    width: 800px;
+    height: 400px;
+    border: 2px solid blue;
+}
 
 .slides {
     width: 500px;

@@ -75,14 +75,14 @@
 /* By BaitType */
 
 #cicon2 {
-    background-image: url('../Graphics/fish17.png');
-    width: 80px;
+    background-image: url('../Graphics/bars07.png');
+    width: 90px;
 }
 
 /* By Angler */
 
 #cicon3 {
-    background-image: url('../Graphics/bars01.png');
+    background-image: url('../Graphics/bars05.png');
     width: 90px;
     /*  border: 2px solid blue; */
 }
@@ -90,15 +90,15 @@
 /* By Rod Type  */
 
 #cicon4 {
-    background-image: url('../Graphics/bars04.png');
+    background-image: url('../Graphics/bars07.png');
     width: 90px;
 }
 
 /* By Line Type */
 
 #cicon5 {
-    background-image: url('../Graphics/fish17.png');
-    width: 80px;
+    background-image: url('../Graphics/bars05.png');
+    width: 90px;
 }
 
 /* By Bait Color */
@@ -222,11 +222,11 @@
 }
 
 #cicon4:hover {
-    background-image: url('../Graphics/bars03.png');
+    background-image: url('../Graphics/bars06.png');
 }
 
 #cicon5:hover {
-    background-image: url('../Graphics/cfish1.png');
+    background-image: url('../Graphics/bars06.png');
 }
 
 #cicon6:hover {

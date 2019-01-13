@@ -57,6 +57,17 @@ class TripFrm extends Component {
   }
 
   render() {
+   /*  let classNames = require('classnames');
+    let temp = this.props.id;
+    ((temp % 2) === 0)? temp = false: temp = true;
+   
+		let tableRow = classNames({
+			'column': true,
+			'hi-lite': temp
+    }) */
+    
+    
+    
     let places = this.state.TblLocation;
     console.log("places", places)
     let optionItems = places.map((place) =>
@@ -94,9 +105,9 @@ class TripFrm extends Component {
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
             <button className="save-trip-data" value="SaveTripData" onClick={this.props.handleSubmit} name="SaveTripData">Save Changes</button>
            <div className="button-cluster">
-           <div className="prev-btn"></div>
+           <div className="prev-btn2"></div>
            <div className="save-btn" onClick={this.props.handleSubmit}></div>
-           <div className="next-btn"></div>
+           <div className="next-btn2"></div>
            </div>
           </div>
         </div>

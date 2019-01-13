@@ -3,7 +3,6 @@ import '../Css/Charts.css';
 import CatchTbl from "../Tables/catchTbl";
 import CatchHeaders from "../Tables/catchHeaders";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
-//import ReactTable from "react-table";
 import "react-table/react-table.css";
 
 class Charts extends Component {
@@ -17,7 +16,7 @@ class Charts extends Component {
       chartToDisplay: "",
       enterTrip: false,
       color: "",
-      fishy: [],
+      fishData: [],
       xBar: "",
       xLabel: "",
       chartType: "",
@@ -29,7 +28,7 @@ class Charts extends Component {
     this.setState(() => ({ CatchTbl: CatchTbl, CatchHeaders: CatchHeaders }));
   }
 
-  handleSkillsCheckBox(e) {
+  /* handleSkillsCheckBox(e) {
 
     const newSelection = e.target.value;
     let newSelectionArray;
@@ -45,7 +44,7 @@ class Charts extends Component {
         { ...prevState.newUser, skills: newSelectionArray }
     })
     )
-  }
+  } */
 
 
   chartBaitType = (e) => {
@@ -67,9 +66,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Bait Type:"
-    const tmp = "Bait"
+    const label = "Bait"
     const barColor = '#463dfc';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartFishCaught = (e) => {
@@ -91,9 +90,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Fish Species:"
-    let tmp = "Species"
+    let label = "Species"
     let barColor = '#3da6fc';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartAngler = (e) => {
@@ -115,9 +114,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Angler:"
-    let tmp = "Angler"
+    let label = "Angler"
     let barColor = '#3da6fc';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartRodType = (e) => {
@@ -139,9 +138,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Fishing Rod:"
-    let tmp = "Rod"
+    let label = "Rod"
     let barColor = '#463dfc';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartLineType = (e) => {
@@ -163,9 +162,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Fishing Line Type:"
-    let tmp = "LineStyle"
+    let label = "LineStyle"
     let barColor = '#3da6fc';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartBaitColor = (e) => {
@@ -187,9 +186,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Bait Color:"
-    let tmp = "BaitColor"
+    let label = "BaitColor"
     let barColor = '#fc3d8d';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartFishStyle = (e) => {
@@ -211,9 +210,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Fishing Style"
-    let tmp = "Style"
+    let label = "Style"
     let barColor = '#f9fc3d';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartLocation = (e) => {
@@ -235,9 +234,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Location"
-    let tmp = "Location"
-    let barColor = '#ff0707';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    const label = "Location"
+    const barColor = '#ff0707';
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartAirTemp = (e) => {
@@ -259,9 +258,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Air Temperature"
-    let tmp = "AirTemp"
-    let barColor = '#e7a923';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    const label = "AirTemp"
+    const barColor = '#e7a923';
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartSkyCondition = (e) => {
@@ -283,9 +282,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Sky Condition"
-    let tmp = "SkyCondition"
-    let barColor = '#23e744';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    const label = "SkyCondition"
+    const barColor = '#23e744';
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartLunarPhase = (e) => {
@@ -307,9 +306,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Lunar Phase:"
-    let tmp = "LunarPhase"
-    let barColor = '#4e237e7';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    const label = "LunarPhase"
+    const barColor = '#4e237e7';
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartPressure = (e) => {
@@ -331,9 +330,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Pressure:"
-    let tmp = "Pressure"
-    let barColor = '#e7235e';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    const label = "Pressure"
+    const barColor = '#e7235e';
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartWaterTemp = (e) => {
@@ -355,9 +354,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Water Temp:"
-    let tmp = "WaterTemp"
+    let label = "WaterTemp"
     let barColor = '#ff0707';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartWaterDepth = (e) => {
@@ -379,9 +378,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Water Depth:"
-    let tmp = "WaterDepth"
+    let label = "WaterDepth"
     let barColor = '#e7a923';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartBottom = (e) => {
@@ -403,9 +402,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Bottom:"
-    let tmp = "Bottom"
+    let label = "Bottom"
     let barColor = '#9ce723';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartWaterColor = (e) => {
@@ -427,9 +426,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Water Color:"
-    let tmp = "WaterColor"
+    let label = "WaterColor"
     let barColor = '#23e744';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartReel = (e) => {
@@ -451,9 +450,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Reel:"
-    let tmp = "Reel"
+    let label = "Reel"
     let barColor = '#4e237e7';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartHookSize = (e) => {
@@ -475,9 +474,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Hook Size:"
-    let tmp = "HookSize"
+    let label = "HookSize"
     let barColor = '#ff0707';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartHookType = (e) => {
@@ -499,9 +498,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Hook Type:"
-    let tmp = "HookType"
+    let label = "HookType"
     let barColor = '#e7a923';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartSinkerStyle = (e) => {
@@ -523,9 +522,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Sinker Style:"
-    let tmp = "SinkerStyle"
+    let label = "SinkerStyle"
     let barColor = '#9ce723';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartLineTest = (e) => {
@@ -547,9 +546,9 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Line Test:"
-    let tmp = "LineTest"
+    let label = "LineTest"
     let barColor = '#23e744';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   chartLineColor = (e) => {
@@ -571,13 +570,12 @@ class Charts extends Component {
       tmpArray.push(fish);
     }
     const chartType = "By Line Color:"
-    let tmp = "LineColor"
+    let label = "LineColor"
     let barColor = '#4e237e7';
-    this.setState({ fishy: tmpArray, xBar: tmp, xLabel: tmp, color: barColor, chartType: chartType });
+    this.setState({ fishData: tmpArray, xBar: label, xLabel: label, color: barColor, chartType: chartType });
   }
 
   render() {
-
 
     return (
       <div className="chart-container"><div className="wrapper">
@@ -673,7 +671,7 @@ class Charts extends Component {
         </form></div>
         <div className="charts"><h3>Select a chart from above</h3><div className="chart-type">{this.state.chartType}</div>
           <div className="chart-container2">
-            <BarChart width={650} height={400} data={this.state.fishy}>
+            <BarChart width={650} height={400} data={this.state.fishData}>
               <Tooltip />
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey={this.state.xBar} />
@@ -682,51 +680,9 @@ class Charts extends Component {
             </BarChart></div>
         </div>
       </div>
-
-
     );
-
-
-
   }
 }
 
 export default Charts;
 
-
-//let xls = [];
-//let found = "";
-//function cb (v, i, arr) {
-//    found = arr[i].shirt_size.indexOf("XL");
-//    if (found !== -1) {
-//        xls.push(arr[i].last_name);
-//   }
-//}
-//runners.forEach(cb);
-//console.log(xls);
-
-/* const count = TripTbl.reduce((tally, Species) => {
-  tally[Species] = (tally[Species] || 0) + 1;
-  return tally;
-}, {}) */
-
-
-/* {[ { Header: "Name", columns: [ { Header: "Species", accessor: "Species" }, { Header: "Location", id: "id",  accessor: "Location" } ]
-                },
-                { Header: "Info", columns: [ { Header: "Angler",  accessor: "Angler" },
-                    {
-                      Header: "Bait",
-                      accessor: "Bait"
-                    }
-                  ]
-                },
-                {
-                  Header: 'Stats',
-                  columns: [
-                    {
-                      Header: "Weight",
-                      accessor: "Weight"
-                    }
-                  ]
-                }
-              ]} */

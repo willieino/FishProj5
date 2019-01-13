@@ -280,7 +280,7 @@ body {
 }
 
 .catch-table-display {
-    width: 4000px;
+    width: 1000px;
     /* border: 2px solid green; */
 }
 
@@ -410,8 +410,9 @@ body {
 .new-table {
     border: 2px solid green;
     height: 900px;
-    width: 5200px;
+    width: 1200px;
     background-color: white;
+    /* column-rule-color: green; */
     color: black;
     font-size: 14px;
     text-align: center;
@@ -483,27 +484,29 @@ span {
 }
 
 .button-cluster {
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 520px;
-    /* border: 2px solid orange; */
+     /* border: 2px solid orange; */ 
     margin-left: 10px;
     margin-top: 20px;
 }
 
-.prev-btn {
+.prev-btn2 {
     width: 203px;
     height: 225px;
+    /* border: 2px solid blue; */
     background-image: url('./Graphics/prev_off.png');
 }
 
 .save-btn {
     width: 123px;
     height: 225px;
+    /* border: 2px solid orange;  */
     background-image: url('./Graphics/save_off.png');
 }
 
-.next-btn {
+.next-btn2 {
     width: 194px;
     height: 225px;
     background-image: url('./Graphics/next_off.png');
@@ -511,7 +514,7 @@ span {
 
 /***************** hover btn *****************/
 
-.prev-btn:hover {
+.prev-btn2:hover {
     background-image: url('./Graphics/prev_hover.png');
 }
 
@@ -519,17 +522,17 @@ span {
     background-image: url('./Graphics/save_on.png');
 }
 
-.next-btn:hover {
+.next-btn2:hover {
     background-image: url('./Graphics/next_hover.png');
 }
 
 /***************** depressed btn *****************/
 
-.prev-btn:active {
+.prev-btn2:active {
     background-image: url('./Graphics/prev_select.png');
 }
 
-.next-btn:active {
+.next-btn2:active {
     background-image: url('./Graphics/next_select.png');
 }
 

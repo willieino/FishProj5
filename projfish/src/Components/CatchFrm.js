@@ -58,61 +58,61 @@ class CatchFrm extends Component {
     localStorage.setItem('viewTrip', "catch");
     let pageType = 'catch';
     const section = "fish";
-    const lunarPhase = TblLunarPhase;
-    const hookType = TblHookType;
-    const lineColor = TblLineColor;
-    const lineStyle = TblLineStyle;
-    const species = TblSpecies;
-    const windDirection = TblWindDirection;
-    const hookSize = TblHookSize;
-    const sinkerWeight = TblSinkerWeight;
-    const sinkerStyle = TblSinkerStyle;
-    const sky = TblSky;
-    const bait = TblBait;
-    const baitColor = TblBaitColor;
-    const outcome = TblOutcome;
-    
+    // const lunarPhase = TblLunarPhase;
+    // const hookType = TblHookType;
+    //const lineColor = TblLineColor;
+    // const lineStyle = TblLineStyle;
+    //const species = TblSpecies;
+    //const windDirection = TblWindDirection;
+    //const hookSize = TblHookSize;
+    //const sinkerWeight = TblSinkerWeight;
+    //const sinkerStyle = TblSinkerStyle;
+    // const sky = TblSky;
+    // const bait = TblBait;
+    // const baitColor = TblBaitColor;
+    // const outcome = TblOutcome;
+
 
     this.setState(() => ({
       currentSection: section,
       viewTrip: pageType,
-      TblLunarPhase: lunarPhase,
-      TblHookType: hookType,
-      TblLineColor: lineColor,
-      TblLineStyle: lineStyle,
-      TblSpecies: species,
-      TblWindDirection: windDirection,
-      TblHookSize: hookSize,
-      TblSinkerWeight: sinkerWeight,
-      TblSinkerStyle: sinkerStyle,
+      TblLunarPhase: TblLunarPhase,
+      TblHookType: TblHookType,
+      TblLineColor: TblLineColor,
+      TblLineStyle: TblLineStyle,
+      TblSpecies: TblSpecies,
+      TblWindDirection: TblWindDirection,
+      TblHookSize: TblHookSize,
+      TblSinkerWeight: TblSinkerWeight,
+      TblSinkerStyle: TblSinkerStyle,
       TblLineTest: TblLineTest,
-      TblSky: sky,
-      TblBait: bait,
-      TblBaitColor: baitColor,
-      TblOutcome: outcome
+      TblSky: TblSky,
+      TblBait: TblBait,
+      TblBaitColor: TblBaitColor,
+      TblOutcome: TblOutcome
     }));
     console.log("state:", this.state)
   }
 
 
- /*  handleChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    this.setState(() => ({ [name]: target.value }));
-    console.log("this state select", this.state)
-  }
- */
+  /*  handleChange = (event) => {
+     const target = event.target;
+     const value = target.value;
+     const name = target.name;
+     this.setState(() => ({ [name]: target.value }));
+     console.log("this state select", this.state)
+   }
+  */
 
   render() {
-   /*  let classNames = require('classnames');
-    let temp = this.state.currentSection;
-    ((temp % 2) === 0) ? temp = false : temp = true;
-    // console.log("temp", temp)
-    let catchTableRow = classNames({
-      'column2': true,
-      'hi-lite': temp
-    }) */
+    /*  let classNames = require('classnames');
+     let temp = this.state.currentSection;
+     ((temp % 2) === 0) ? temp = false : temp = true;
+     // console.log("temp", temp)
+     let catchTableRow = classNames({
+       'column2': true,
+       'hi-lite': temp
+     }) */
     let currentPhases = this.state.TblLunarPhase;
     let optionItems1 = currentPhases.map((currentPhase) =>
       <option key={currentPhase.ID} value={currentPhase.LunarPhase} name={currentPhase.LunarPhase}>{currentPhase.LunarPhase}</option>
@@ -150,7 +150,7 @@ class CatchFrm extends Component {
       <option key={item.ID} value={item.SinkerWeight}>{item.SinkerWeight}</option>
     );
     let currentSky = this.state.TblSky;
-    let optionItems10 = currentSky.map((item) =>
+    const optionItems10 = currentSky.map((item) =>
       <option key={item.ID} value={item.Sky}>{item.Sky}</option>
     );
     let currentBait = this.state.TblBait;
@@ -171,28 +171,29 @@ class CatchFrm extends Component {
     );
     return (
       <form className="catch-form" onSubmit={this.props.catchSubmit}>
-        <div className="catch-container"><div className="catch-header">
-          <div className="container-btn">
-            <div id="nav-dicon1" className="nav-catch-icon-1" onClick={this.fishSection}></div>
-            <button className="nav-button-o" value="fishSection" onClick={this.fishSection} name="fishSection">Fish Info</button>
+        <div className="catch-container">
+          <div className="catch-header">
+            <div className="container-btn">
+              <div id="nav-dicon1" className="nav-catch-icon-1" onClick={this.fishSection}></div>
+              <button className="nav-button-o" value="fishSection" onClick={this.fishSection} name="fishSection">Fish Info</button>
+            </div>
+            <div className="container-btn">
+              <div id="nav-dicon2" className="nav-catch-icon-1" onClick={this.weatherSection}></div>
+              <button className="nav-button-o" value="weatherSection" onClick={this.weatherSection} name="weatherSection">Weather Info</button>
+            </div>
+            <div className="container-btn">
+              <div id="nav-dicon3" className="nav-catch-icon-1" onClick={this.equipmentSection}></div>
+              <button className="nav-button-o" value="equipmentSection" onClick={this.equipmentSection} name="equipmentSection">Equipment Info</button>
+            </div>
+            <div className="container-btn">
+              <div id="nav-dicon4" className="nav-catch-icon-1" onClick={this.environmentInfo}></div>
+              <button className="nav-button-o" value="environmentInfo" onClick={this.environmentInfo} name="environmentInfo">Environment Info</button>
+            </div>
+            <div className="container-btn">
+              <div id="nav-dicon5" className="nav-catch-icon-1" onClick={this.photoSection}></div>
+              <button className="nav-button-o" value="photoSection" onClick={this.photoSection} name="photoSection">Photos</button>
+            </div>
           </div>
-          <div className="container-btn">
-            <div id="nav-dicon2" className="nav-catch-icon-1" onClick={this.weatherSection}></div>
-            <button className="nav-button-o" value="weatherSection" onClick={this.weatherSection} name="weatherSection">Weather Info</button>
-          </div>
-          <div className="container-btn">
-            <div id="nav-dicon3" className="nav-catch-icon-1" onClick={this.equipmentSection}></div>
-            <button className="nav-button-o" value="equipmentSection" onClick={this.equipmentSection} name="equipmentSection">Equipment Info</button>
-          </div>
-          <div className="container-btn">
-            <div id="nav-dicon4" className="nav-catch-icon-1" onClick={this.environmentInfo}></div>
-            <button className="nav-button-o" value="environmentInfo" onClick={this.environmentInfo} name="environmentInfo">Environment Info</button>
-          </div>
-          <div className="container-btn">
-            <div id="nav-dicon5" className="nav-catch-icon-1" onClick={this.photoSection}></div>
-            <button className="nav-button-o" value="photoSection" onClick={this.photoSection} name="photoSection">Photos</button>
-          </div>
-        </div>
           <div className="input-catch-container">
             <div className="fishSection">
               <h3>Fish Section:</h3>
@@ -249,7 +250,10 @@ class CatchFrm extends Component {
               <div className="catch-text">Wind Speed:</div>
               <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Wind" />
               <div className="catch-text">Sky Condition:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="SkyCondition" />
+              <select className="select-lunarphase" value={this.props.value} name="Sky" onChange={this.props.handleChange}>
+                {optionItems10}
+              </select>
+              {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="SkyCondition" /> */}
               <div className="catch-text"> Lunar Phase: </div>
               <select className="select-lunarphase" value={this.props.value} name="LunarPhase" onChange={this.props.handleChange}>
                 {optionItems1}
@@ -286,7 +290,7 @@ class CatchFrm extends Component {
               <select className="select-lunarphase" value={this.props.value} name="HookSize" onChange={this.props.handleChange}>
                 {optionItems7}
               </select>
-             {/*  <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="HookSize" /> */}
+              {/*  <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="HookSize" /> */}
               <div className="catch-text">Hook Type:</div>
               <select className="select-lunarphase" value={this.props.value} name="HookType" onChange={this.props.handleChange}>
                 {optionItems2}

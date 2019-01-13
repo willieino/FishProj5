@@ -1,15 +1,15 @@
 const tblSky = [
     {
         ID: 1,
-        skyCondition: "Clear"
+        Sky: "Clear"
     },
     {
         ID: 2,
-        skyCondition: "Cloudy"
+        Sky: "Cloudy"
     },
     {
         ID: 3,
-        skyCondition: "Overcast"
+        Sky: "Overcast"
     }
 ]
 

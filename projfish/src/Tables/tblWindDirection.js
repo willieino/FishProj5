@@ -1,9 +1,6 @@
 const tblWindDirection = [
 
-    {
-        ID: 1,
-        Direction: "North"
-    },
+    { ID: 1,  Direction: "North" },
     {
         ID: 2,
         Direction: "South"

@@ -1,0 +1,11 @@
+Header,accessor,width, Cell
+  Trip Name ,  Trip ,150,
+  Start Date ,  StartDate ,100,
+  Duration ,  Duration ,100,
+  Anglers ,  Anglers ,150, this.renderEditable
+  Location ,  Place ,175,
+  Notes ,  Notes ,200,
+  GPS1 ,  GPS1 ,75,
+  GPS2 ,  GPS2 ,75,
+  Image Caption ,  ImgCaption ,150,
+  Photos ,  Photos ,175,

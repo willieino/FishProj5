@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const catchTbl = require('../data/helpers/catchTblModel')
+const catchTbl = require('../data/helpers/catchTblModel');
 
 const sendUserError = (status, msg, res) => {
     res
@@ -8,143 +8,129 @@ const sendUserError = (status, msg, res) => {
         .json({ Error: msg });
 };
 
-/************************************ PROJECTS SECTION ***********************************/
+/***************************************** CATCH SECTION **************************************/
 
-/********* Get Projects *************/
+
+/********* Get Catches *************/
 router.get('/', (req, res) => {
     catchTbl.get()
-        .then((catchTbl) => {
-            res.json(catchTbl);
+        .then((catches) => {
+            res.json(catches);
         })
         .catch(err => {
             res
                 .status(500)
-                .json({ error: "The Catch Table information could not be retrieved." });
+                .json({ error: "The catch information could not be retrieved." });
         });
 });
 
-/********* Get Single Project *************/
+/********* Get Single Catch *************/
 router.get('/:id', (req, res) => {
     const { id } = req.params
-    projects.get(id)
-        .then(project => {
-            if (project) {
-                res.json(project);
+    catchTbl.get(id)
+        .then(catches => {
+            if (catches) {
+                res.json(catches);
             } else {
                 res
                     .status(404)
-                    .json({ message: "The project with the specified ID does not exist." })
+                    .json({ message: "The catch with the specified ID dont exist." })
             }
         })
         .catch(err => {
             res
                 .status(500)
-                .json({ error: "The project information could not be retrieved." });
+                .json({ error: "The catch could not be retrieved." });
         });
 });
 
 
-/************* Delete Project *************/
+/************* Delete Catch *************/
 router.delete('/:id', (req, res) => {
     const { id } = req.params
-
+   
     if (id) {
-        projects.remove(id)
-            .then(project => {
-                if (project) {
-                    res.json({ message: "The project was successfully deleted" });
+        catchTbl.remove(id)
+            .then(catches => {
+                if (catches) {
+                    res.json({ message: "The catch was successfully deleted" });
                 } else {
                     res
                         .status(404)
-                        .json({ message: "The project with the specified ID does not exist." })
+                        .json({ message: "The catch with the specified ID does not exist." })
                 }
             })
             .catch(err => {
                 res
                     .status(500)
-                    .json({ error: "The project could not be removed." });
+                    .json({ error: "The catch could not be removed." });
             });
     }
 });
 
-/********* Update Project *************/
+/********* Update Catch *************/
 router.put('/:id', (req, res) => {
     const { id } = req.params
-    const newProject = req.body
+    const newCatch = req.body
 
-    if (!newProject.name || !newProject.description || !newProject.completed) {
+    if (!newCatch.tripTbl_id) {
         res
             .status(400)
-            .json({ message: "Please provide name, description and completed for the project." });
+            .json({ message: "Please provide project id, description, notes and completion status for the action." });
     } else {
-       
-        if (newProject) {
-            projects.update(id, newProject)
-                .then(project => {
-                   
-                        
-                        if (project) {
+        
+        if (newCatch) {
+            catchTbl.update(id, newCatch)
+                .then(catches => {
+                    if (catches) {
+                       
+                     
                             res
                                 .status(201)
-                                .json(project);
+                                .json(catches);
                         } else {
                             res
                                 .status(404)
-                                .json({ message: "The project with the specified ID does not exist." })
+                                .json({ message: "The catch with the specified ID does not exist." })
                         }
-                 
-                   
+                  
                 })
                 .catch(err => {
                     res
                         .status(500)
-                        .json({ error: "The project could not be modified." });
+                        .json({ error: "The catch could not be modified." });
                 });
         } else {
 
             res
                 .status(404)
-                .json({ message: "The project with the specified ID does not exist." })
+                .json({ message: "The catch with the specified ID does not exist." })
         }
     }
 })
 
-/********* Create New Project *************/
+/********* Create New Catch *************/
 router.post('/', (req, res) => {
-    const project = req.body;
-    if (project.name && project.description && project.completed) {
-        projects.insert(project)
-            .then(project => {
+    const catches = req.body;
+    console.log("action:", action)
+    if (catches.tripTbl_id) {
+        catchTbl.insert(catchs)
+            .then(catchs => {
                 res.status(201)
-                    .json(project)
+                    .json(catchs)
             })
             .catch(err => {
                 res
                     .status(500)
-                    .json({ message: "failed to insert project in db" })
+                    .json({ message: "failed to insert action in db" })
             });
     } else {
         res
             .status(400)
-            .json({ message: "missing name, description or completed status." })
+            .json({ message: "missing project_id, description, notes or completion status." })
     }
 });
 
-/************* Get Single Project's Actions *************/
-router.get('/actions/:id', (req, res) => {
-    const { id } = req.params;
-    projects
-        .getProjectActions(id)
-        .then(usersActions => {
-            if (usersActions === 0) {
-                return sendUserError(404, 'No actions in the project', res);
-            }
-            res.json(usersActions);
-        })
-        .catch(err => {
-            return sendUserError(500, 'Unable to access db', res);
-        });
-});
 
 
 

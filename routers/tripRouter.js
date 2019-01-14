@@ -1,17 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const tripTbl = require('../data/helpers/tripTblModel')
-
+//const tripTbl = require('../data/helpers/tripTblModel')
+//const tripTbl = require('../data/dbConfig');
+const db = require('../data/db');
 const sendUserError = (status, msg, res) => {
     res
         .status(status)
         .json({ Error: msg });
 };
 
-/************************************ PROJECTS SECTION ***********************************/
+/************************************ TRIPS SECTION ***********************************/
+
+router.get('/', (req, res) => {
+    db.find()
+        .then((trips) => {
+            res.json(trips);
+        })
+        .catch(err => {
+            res
+                .status(500)
+                .json({ error: "The trip information could not be retrieved." });
+        });
+});
 
 /********* Get Trips *************/
-router.get('/', (req, res) => {
+/* router.get('/', (req, res) => {
     tripTbl.get()
         .then((trip) => {
             res.json(trip);
@@ -21,7 +34,7 @@ router.get('/', (req, res) => {
                 .status(500)
                 .json({ error: "The trip information could not be retrieved." });
         });
-});
+}); */
 
 /********* Get Single Trip *************/
 router.get('/:id', (req, res) => {
@@ -112,7 +125,7 @@ router.put('/:id', (req, res) => {
 /********* Create New Trip *************/
 router.post('/', (req, res) => {
     const trip = req.body;
-    if (trip.name) {
+    if (trip.Trip) {
         tripTbl.insert(trip)
             .then(trip => {
                 res.status(201)

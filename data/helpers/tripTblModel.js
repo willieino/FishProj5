@@ -2,6 +2,8 @@ const db = require('../dbConfig.js');
 const mappers = require('./mappers');
 
 module.exports = {
+  
+  
   get: function(id) {
     let query = db('tripTbl as t');
 
@@ -24,7 +26,7 @@ module.exports = {
   },
   getTripCatches: function(tripId) {
     return db('catchTbl')
-      .where('trip_id', tripId)
+      .where('tripTbl_id', tripId)
       .then(catches => catches.map(catchs => mappers.catchToBody(catchs)));
   },
   insert: function(trip) {

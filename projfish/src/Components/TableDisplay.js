@@ -6,6 +6,7 @@ import '../App.css';
 import ReactTable from "react-table";
 //import { render } from "react-dom";
 import "react-table/react-table.css";
+import axios from "axios";
 
 class TableDisplay extends Component {
   constructor(props) {
@@ -33,7 +34,18 @@ class TableDisplay extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
 
-    this.setState(() => ({ TripTbl: TripTbl }));
+    axios
+    .get('http://localhost:5050/api/trip')
+    .then(response => {
+      this.setState(() => ({ TripTbl: response.data }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
+
+console.log("TripTbl", this.state.TripTbl)
+
+   // this.setState(() => ({ TripTbl: TripTbl }));
 
   }
 

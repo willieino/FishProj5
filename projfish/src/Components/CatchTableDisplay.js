@@ -6,6 +6,7 @@ import ReactTable from "react-table";
 import "react-table/react-table.css";
 //import { render } from "react-dom";
 //import CatchHeaders from "../Tables/catchHeaders";
+import axios from "axios";
 
 class CatchTableDisplay extends Component {
   constructor(props) {
@@ -62,7 +63,16 @@ class CatchTableDisplay extends Component {
   }
 
   componentDidMount() {
-    this.setState(() => ({ CatchTbl: CatchTbl }));
+
+    axios
+    .get('http://localhost:5050/api/catch')
+    .then(response => {
+      this.setState(() => ({ CatchTbl: response.data }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
+   // this.setState(() => ({ CatchTbl: CatchTbl }));
   }
    renderEditable(cellInfo) {
     return (

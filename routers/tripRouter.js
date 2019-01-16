@@ -125,8 +125,9 @@ router.put('/:id', (req, res) => {
 /********* Create New Trip *************/
 router.post('/', (req, res) => {
     const trip = req.body;
+    console.log("trip:", trip)
     if (trip.Trip) {
-        tripTbl.insert(trip)
+        db.insert(trip)
             .then(trip => {
                 res.status(201)
                     .json(trip)

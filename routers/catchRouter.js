@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const catchTbl = require('../data/helpers/catchTblModel');
-
+//const catchTbl = require('../data/helpers/catchTblModel');
+const db = require('../data/db2');
 const sendUserError = (status, msg, res) => {
     res
         .status(status)
@@ -10,10 +10,8 @@ const sendUserError = (status, msg, res) => {
 
 /***************************************** CATCH SECTION **************************************/
 
-
-/********* Get Catches *************/
 router.get('/', (req, res) => {
-    catchTbl.get()
+    db.find()
         .then((catches) => {
             res.json(catches);
         })
@@ -23,6 +21,19 @@ router.get('/', (req, res) => {
                 .json({ error: "The catch information could not be retrieved." });
         });
 });
+
+/********* Get Catches *************/
+/* router.get('/', (req, res) => {
+    catchTbl.get()
+        .then((catches) => {
+            res.json(catches);
+        })
+        .catch(err => {
+            res
+                .status(500)
+                .json({ error: "The catch information could not be retrieved." });
+        });
+}); */
 
 /********* Get Single Catch *************/
 router.get('/:id', (req, res) => {

@@ -11,6 +11,7 @@ import Slideshow from "./Components/Slideshow"
 import CatchTbl from "./Tables/catchTbl";
 import TableDisplay from "./Components/TableDisplay";
 import CatchTableDisplay from "./Components/CatchTableDisplay";
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
@@ -172,7 +173,7 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newTripRec = {
-      ID: TripTbl.length + 1,
+      //ID: TripTbl.length + 1,
       Trip: this.state.Trip,
       StartDate: this.state.StartDate,
       Duration: this.state.Duration,
@@ -185,8 +186,23 @@ class App extends Component {
       ImgCaption: this.state.ImgCaption
     }
     // this.setState(() => ({ TripTbl: this.TripTbl, newTripRec: newTripRec }));
-    TripTbl.push(newTripRec);
-    this.setState(() => ({ TripTbl: this.TripTbl }));
+    axios
+    .post('http://localhost:5050/api/trip', newTripRec)
+    .then(response => {
+     
+      this.setState(() => ({ TripTbl: newTripRec }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
+
+    
+    
+    
+   // TripTbl.push(newTripRec);
+
+
+   // this.setState(() => ({ TripTbl: this.TripTbl }));
   }
 
   catchSubmit = (e) => {

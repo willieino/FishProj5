@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import TripTbl from "../Tables/tripTbl";
+//import TripTbl from "../Tables/tripTbl";
 //import TableRow from "./TableRow";
 import '../App.css';
 //import TripHeaders from "../Tables/tripHeaders";
 import ReactTable from "react-table";
-//import { render } from "react-dom";
+import { render } from "react-dom";
 import "react-table/react-table.css";
 import axios from "axios";
 
@@ -58,7 +58,22 @@ console.log("TripTbl", this.state.TripTbl)
         onBlur={e => {
           const data = [...this.state.TripTbl];
           data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+         console.log("data:", data)
           this.setState({ TripTbl: data });
+         /*  axios
+          .post('http://localhost:5050/api/trip', this.state.TripTbl)
+          .then(response => {
+           console.log("response:", response)
+           // this.setState(() => ({ TripTbl: newTripRec }));
+          })
+          .catch(error => {
+            console.error('Server Error', error);
+          }); */
+      
+
+
+
+
         }}
         dangerouslySetInnerHTML={{
           __html: this.state.TripTbl[cellInfo.index][cellInfo.column.id]

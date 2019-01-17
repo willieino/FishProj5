@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../Css/Charts.css';
-import CatchTbl from "../Tables/catchTbl";
+//import CatchTbl from "../Tables/catchTbl";
 import CatchHeaders from "../Tables/catchHeaders";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import "react-table/react-table.css";
+import axios from "axios";
 
 class Charts extends Component {
   constructor(props) {
@@ -24,8 +25,15 @@ class Charts extends Component {
   }
 
   componentDidMount() {
-
-    this.setState(() => ({ CatchTbl: CatchTbl, CatchHeaders: CatchHeaders }));
+    axios
+    .get('http://localhost:5050/api/catch')
+    .then(response => {
+      this.setState(() => ({ CatchTbl: response.data }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
+  //  this.setState(() => ({ CatchTbl: CatchTbl, CatchHeaders: CatchHeaders }));
   }
 
   /* handleSkillsCheckBox(e) {
@@ -50,7 +58,7 @@ class Charts extends Component {
   chartBaitType = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Bait]) {
         tally[item.Bait] = 1;
       } else {
@@ -74,7 +82,7 @@ class Charts extends Component {
   chartFishCaught = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Species]) {
         tally[item.Species] = 1;
       } else {
@@ -98,7 +106,7 @@ class Charts extends Component {
   chartAngler = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Angler]) {
         tally[item.Angler] = 1;
       } else {
@@ -122,7 +130,7 @@ class Charts extends Component {
   chartRodType = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Rod]) {
         tally[item.Rod] = 1;
       } else {
@@ -146,7 +154,7 @@ class Charts extends Component {
   chartLineType = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.LineStyle]) {
         tally[item.LineStyle] = 1;
       } else {
@@ -170,7 +178,7 @@ class Charts extends Component {
   chartBaitColor = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.BaitColor]) {
         tally[item.BaitColor] = 1;
       } else {
@@ -194,7 +202,7 @@ class Charts extends Component {
   chartFishStyle = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Style]) {
         tally[item.Style] = 1;
       } else {
@@ -218,7 +226,7 @@ class Charts extends Component {
   chartLocation = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Location]) {
         tally[item.Location] = 1;
       } else {
@@ -242,7 +250,7 @@ class Charts extends Component {
   chartAirTemp = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.AirTemp]) {
         tally[item.AirTemp] = 1;
       } else {
@@ -266,7 +274,7 @@ class Charts extends Component {
   chartSkyCondition = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.SkyCondition]) {
         tally[item.SkyCondition] = 1;
       } else {
@@ -290,7 +298,7 @@ class Charts extends Component {
   chartLunarPhase = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.LunarPhase]) {
         tally[item.LunarPhase] = 1;
       } else {
@@ -314,7 +322,7 @@ class Charts extends Component {
   chartPressure = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Pressure]) {
         tally[item.Pressure] = 1;
       } else {
@@ -338,7 +346,7 @@ class Charts extends Component {
   chartWaterTemp = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.WaterTemp]) {
         tally[item.WaterTemp] = 1;
       } else {
@@ -362,7 +370,7 @@ class Charts extends Component {
   chartWaterDepth = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.WaterDepth]) {
         tally[item.WaterDepth] = 1;
       } else {
@@ -386,7 +394,7 @@ class Charts extends Component {
   chartBottom = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Bottom]) {
         tally[item.Bottom] = 1;
       } else {
@@ -410,7 +418,7 @@ class Charts extends Component {
   chartWaterColor = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.WaterColor]) {
         tally[item.WaterColor] = 1;
       } else {
@@ -434,7 +442,7 @@ class Charts extends Component {
   chartReel = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.Reel]) {
         tally[item.Reel] = 1;
       } else {
@@ -458,7 +466,7 @@ class Charts extends Component {
   chartHookSize = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.HookSize]) {
         tally[item.HookSize] = 1;
       } else {
@@ -482,7 +490,7 @@ class Charts extends Component {
   chartHookType = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.HookType]) {
         tally[item.HookType] = 1;
       } else {
@@ -506,7 +514,7 @@ class Charts extends Component {
   chartSinkerStyle = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.SinkerStyle]) {
         tally[item.SinkerStyle] = 1;
       } else {
@@ -530,7 +538,7 @@ class Charts extends Component {
   chartLineTest = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.LineTest]) {
         tally[item.LineTest] = 1;
       } else {
@@ -554,7 +562,7 @@ class Charts extends Component {
   chartLineColor = (e) => {
     e.preventDefault();
     let tmpArray = [];
-    const test = CatchTbl.reduce((tally, item) => {
+    const test = this.state.CatchTbl.reduce((tally, item) => {
       if (!tally[item.LineColor]) {
         tally[item.LineColor] = 1;
       } else {

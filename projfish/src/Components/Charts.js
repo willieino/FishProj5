@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Css/Charts.css';
 //import CatchTbl from "../Tables/catchTbl";
-import CatchHeaders from "../Tables/catchHeaders";
+//import CatchHeaders from "../Tables/catchHeaders";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import "react-table/react-table.css";
 import axios from "axios";
@@ -35,25 +35,7 @@ class Charts extends Component {
     });
   //  this.setState(() => ({ CatchTbl: CatchTbl, CatchHeaders: CatchHeaders }));
   }
-
-  /* handleSkillsCheckBox(e) {
-
-    const newSelection = e.target.value;
-    let newSelectionArray;
-
-    if (this.state.newUser.skills.indexOf(newSelection) > -1) {
-      newSelectionArray = this.state.newUser.skills.filter(s => s !== newSelection)
-    } else {
-      newSelectionArray = [...this.state.newUser.skills, newSelection];
-    }
-
-    this.setState(prevState => ({
-      newUser:
-        { ...prevState.newUser, skills: newSelectionArray }
-    })
-    )
-  } */
-
+  
 
   chartBaitType = (e) => {
     e.preventDefault();
@@ -67,11 +49,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Bait: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Bait Type:"
     const label = "Bait"
@@ -91,11 +73,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Species: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Fish Species:"
     let label = "Species"
@@ -115,11 +97,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Angler: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Angler:"
     let label = "Angler"
@@ -139,11 +121,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Rod: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Fishing Rod:"
     let label = "Rod"
@@ -163,11 +145,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         LineStyle: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Fishing Line Type:"
     let label = "LineStyle"
@@ -187,11 +169,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         BaitColor: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Bait Color:"
     let label = "BaitColor"
@@ -211,11 +193,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Style: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Fishing Style"
     let label = "Style"
@@ -235,11 +217,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Location: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Location"
     const label = "Location"
@@ -259,11 +241,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         AirTemp: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Air Temperature"
     const label = "AirTemp"
@@ -283,11 +265,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         SkyCondition: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Sky Condition"
     const label = "SkyCondition"
@@ -307,11 +289,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         LunarPhase: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Lunar Phase:"
     const label = "LunarPhase"
@@ -331,11 +313,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Pressure: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Pressure:"
     const label = "Pressure"
@@ -355,11 +337,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         WaterTemp: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Water Temp:"
     let label = "WaterTemp"
@@ -379,11 +361,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         WaterDepth: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Water Depth:"
     let label = "WaterDepth"
@@ -403,11 +385,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Bottom: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Bottom:"
     let label = "Bottom"
@@ -427,11 +409,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         WaterColor: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Water Color:"
     let label = "WaterColor"
@@ -451,11 +433,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         Reel: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Reel:"
     let label = "Reel"
@@ -475,11 +457,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         HookSize: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Hook Size:"
     let label = "HookSize"
@@ -499,11 +481,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         HookType: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Hook Type:"
     let label = "HookType"
@@ -523,11 +505,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         SinkerStyle: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Sinker Style:"
     let label = "SinkerStyle"
@@ -547,11 +529,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         LineTest: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Line Test:"
     let label = "LineTest"
@@ -571,11 +553,11 @@ class Charts extends Component {
       return tally;
     }, {});
     for (const prop in test) {
-      let fish = {
+      let newFishRec = {
         LineColor: prop,
         Qty: test[prop]
       }
-      tmpArray.push(fish);
+      tmpArray.push(newFishRec);
     }
     const chartType = "By Line Color:"
     let label = "LineColor"

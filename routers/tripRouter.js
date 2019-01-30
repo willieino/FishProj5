@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-//const tripTbl = require('../data/helpers/tripTblModel')
-//const tripTbl = require('../data/dbConfig');
-const db = require('../data/db');
+const db = require('../data/tripDb');
 const sendUserError = (status, msg, res) => {
     res
         .status(status)

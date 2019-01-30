@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import TripTbl from "../Tables/tripTbl" 
+import TripTbl from "../Tables/tripTbl"
 import '../App.css';
-//import Place from "./Place";
-import TblLocation from "../Tables/tblLocation";
+//import TblLocation from "../Tables/tblLocation";
+//import TblPlaceApi from "./TablesApi/tblPlaceApi";
+import axios from "axios";
 
 class TripFrm extends Component {
   constructor(props) {
@@ -23,19 +24,25 @@ class TripFrm extends Component {
       TripTbl: [],
       TblLocation: [],
     }
-    
+
   }
 
   componentDidMount() {
-    const places = TblLocation;
-   // this.setState = () => ({ TripTbl: TripTbl, TblLocation: places })
-    this.setState(() => ({ TripTbl: TripTbl, TblLocation: places }));
+    //const places = TblLocation;
+    // this.setState = () => ({ TripTbl: TripTbl, TblLocation: places })
+    axios
+    .get('http://localhost:5050/api/location')
+    .then(response => {
+      this.setState(() => ({ TblLocation: response.data,  TripTbl: TripTbl }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
+
+   // this.setState(() => ({ TripTbl: TripTbl, TblLocation: places }));
     //console.log("in the tripfrm component did mount")
-   // console.log(this.state)
+    // console.log(this.state)
   }
-
-
-
 
   handleChange = (event) => {
     const target = event.target;
@@ -46,39 +53,39 @@ class TripFrm extends Component {
     console.log("name:", name)
     console.log("target:", target)
 
-   /*  this.setState({
-      [name]: value
-    
-    }); */
-    this.setState(() => ({ place: target.value  }));
-   console.log("this state select", this.state.place)
+    /*  this.setState({
+       [name]: value
+     
+     }); */
+    this.setState(() => ({ place: target.value }));
+    console.log("this state select", this.state.place)
 
 
   }
 
   render() {
-   /*  let classNames = require('classnames');
-    let temp = this.props.id;
-    ((temp % 2) === 0)? temp = false: temp = true;
-   
-		let tableRow = classNames({
-			'column': true,
-			'hi-lite': temp
-    }) */
+    /*  let classNames = require('classnames');
+     let temp = this.props.id;
+     ((temp % 2) === 0)? temp = false: temp = true;
     
-    
-    
+     let tableRow = classNames({
+       'column': true,
+       'hi-lite': temp
+     }) */
+
+
+
     let places = this.state.TblLocation;
     console.log("places", places)
     let optionItems = places.map((place) =>
-            <option key={place.ID} value={place.Place} name={place.Place}>{place.Place}</option>
-        );
+      <option key={place.ID} value={place.Place} name={place.Place}>{place.Place}</option>
+    );
     return (
       <form className="trip-form" onSubmit={this.props.handleSubmit}>
         <div className="trip-container">
-        <div className="trip-header">Enter your trip data. Press Save when finished.</div>
-          <div className="input-container"> 
-            
+          <div className="trip-header">Enter your trip data. Press Save when finished.</div>
+          <div className="input-container">
+
             <div className="trip-text">Trip Name: </div>
             <input type="text" id="dragMe" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Trip" />
             <div className="trip-text">Start Date: </div>
@@ -86,11 +93,12 @@ class TripFrm extends Component {
             <div className="trip-text">Duration: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Duration" />
             <div className="trip-text">Place:</div>
+            
             <select className="select-place" value={this.props.value} name="Place" onChange={this.props.changeHandler}>
-             
-                 {optionItems}
-                 <option className="selected-option">Add New Place</option>
-             </select>
+
+              {optionItems}
+              <option className="selected-option">Add New Place</option>
+            </select>
             <div className="trip-text">Notes: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="Notes" />
             <div className="trip-text">Anglers: </div>
@@ -104,11 +112,11 @@ class TripFrm extends Component {
             <div className="trip-text">Image Caption: </div>
             <input type="text" className="trip" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
             <button className="save-trip-data" value="SaveTripData" onClick={this.props.handleSubmit} name="SaveTripData">Save Changes</button>
-           <div className="button-cluster">
-           <div className="prev-btn2"></div>
-           <div className="save-btn" onClick={this.props.handleSubmit}></div>
-           <div className="next-btn2"></div>
-           </div>
+            {/* <div className="button-cluster">
+              <div className="prev-btn2"></div>
+              <div className="save-btn" onClick={this.props.handleSubmit}></div>
+              <div className="next-btn2"></div>
+            </div> */}
           </div>
         </div>
       </form>

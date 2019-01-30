@@ -7,7 +7,10 @@ const PORT = 5050;
 const logger = require('morgan');
 const helmet = require('helmet');
 const catchRouter = require('./routers/catchRouter');
-const tripRouter = require('./routers/tripRouter')
+const tripRouter = require('./routers/tripRouter');
+const baitRouter = require('./routers/baitRouter');
+const locationRouter = require('./routers/locationRouter');
+const baitColorRouter = require('./routers/baitColorRouter');
 
 let fishTable = "";
 
@@ -18,6 +21,9 @@ server.use(logger('tiny'));
 server.use(helmet());
 server.use('/api/catch', catchRouter);
 server.use('/api/trip', tripRouter);
+server.use('/api/bait', baitRouter);
+server.use('/api/baitcolor', baitColorRouter);
+server.use('/api/location', locationRouter);
 
 
 const sendUserError = (msg, res) => {
@@ -27,7 +33,6 @@ const sendUserError = (msg, res) => {
 };
 
 // add your server code starting here
-
 
 
 

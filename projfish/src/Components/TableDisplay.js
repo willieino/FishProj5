@@ -43,7 +43,7 @@ class TableDisplay extends Component {
       console.error('Server Error', error);
     });
 
-console.log("TripTbl", this.state.TripTbl)
+console.log("TripTbl:", this.state.TripTbl)
 
    // this.setState(() => ({ TripTbl: TripTbl }));
 
@@ -59,7 +59,9 @@ console.log("TripTbl", this.state.TripTbl)
           const data = [...this.state.TripTbl];
           data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
          console.log("data:", data)
+         console.log("data[cellInfo.index]:", data[cellInfo.index][cellInfo.column.id])
           this.setState({ TripTbl: data });
+
          /*  axios
           .post('http://localhost:5050/api/trip', this.state.TripTbl)
           .then(response => {

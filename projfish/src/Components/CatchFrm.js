@@ -8,12 +8,12 @@ import TblLineTest from "../Tables/tblLineTest";
 import TblSinkerWeight from "../Tables/tblSinkerWeight";
 import TblSinkerStyle from "../Tables/tblSinkerStyle";
 import TblHookSize from "../Tables/tblHookSize";
-import TblBait from "../Tables/tblBait";
-import TblBaitColor from "../Tables/tblBaitColor";
+//import TblBait from "../Tables/tblBait";
+//import TblBaitColor from "../Tables/tblBaitColor";
 import TblSky from "../Tables/tblSky";
 import TblOutcome from "../Tables/tblOutcome";
 import TblWindDirection from "../Tables/tblWindDirection";
-
+import axios from "axios";
 import '../Css/CatchFrm.css';
 
 
@@ -58,6 +58,24 @@ class CatchFrm extends Component {
     localStorage.setItem('viewTrip', "catch");
     let pageType = 'catch';
     const section = "fish";
+
+    axios
+    .get('http://localhost:5050/api/bait')
+    .then(response => {
+      this.setState(() => ({ TblBait: response.data }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
+
+    axios
+    .get('http://localhost:5050/api/baitColor')
+    .then(response => {
+      this.setState(() => ({ TblBaitColor: response.data }));
+    })
+    .catch(error => {
+      console.error('Server Error', error);
+    });
     // const lunarPhase = TblLunarPhase;
     // const hookType = TblHookType;
     //const lineColor = TblLineColor;
@@ -87,8 +105,8 @@ class CatchFrm extends Component {
       TblSinkerStyle: TblSinkerStyle,
       TblLineTest: TblLineTest,
       TblSky: TblSky,
-      TblBait: TblBait,
-      TblBaitColor: TblBaitColor,
+      //TblBait: TblBait,
+     // TblBaitColor: TblBaitColor,
       TblOutcome: TblOutcome
     }));
     console.log("state:", this.state)

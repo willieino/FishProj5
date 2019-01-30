@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-//const catchTbl = require('../data/helpers/catchTblModel');
-const db = require('../data/db2');
+const db = require('../data/catchDb');
 const sendUserError = (status, msg, res) => {
     res
         .status(status)

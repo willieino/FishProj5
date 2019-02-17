@@ -13,6 +13,7 @@ import TblHookSize from "../Tables/tblHookSize";
 import TblSky from "../Tables/tblSky";
 import TblOutcome from "../Tables/tblOutcome";
 import TblWindDirection from "../Tables/tblWindDirection";
+import ImageUploader from 'react-images-upload';
 import axios from "axios";
 import '../Css/CatchFrm.css';
 
@@ -25,17 +26,17 @@ class CatchFrm extends Component {
       place: "",
       photos: "",
       currentSection: "",
-      currentPhase: "",
-      currentHookType: "",
-      currentLineColor: "",
-      currentLineStyle: "",
-      currentWindDirection: "",
-      CurrentSkyCondition: "",
-      currentHookSize: "",
+      // currentPhase: "",
+      // currentHookType: "",
+      // currentLineColor: "",
+      //currentLineStyle: "",
+      //currentWindDirection: "",
+      //CurrentSkyCondition: "",
+      //currentHookSize: "",
       imgCaption: "",
       viewTrip: "",
       data: [],
-      TblLunarPhases: [],
+      //TblLunarPhases: [],
       TblWindDirection: [],
       TblSpecies: [],
       TblLunarPhase: [],
@@ -50,8 +51,9 @@ class CatchFrm extends Component {
       TblSinkerWeight: [],
       TblSinkerStyle: [],
       TblOutcome: [],
+      pictures: []
     }
-
+    this.onDrop = this.onDrop.bind(this);
   }
 
   componentDidMount() {
@@ -60,35 +62,22 @@ class CatchFrm extends Component {
     const section = "fish";
 
     axios
-    .get('http://localhost:5050/api/bait')
-    .then(response => {
-      this.setState(() => ({ TblBait: response.data }));
-    })
-    .catch(error => {
-      console.error('Server Error', error);
-    });
+      .get('http://localhost:5050/api/bait')
+      .then(response => {
+        this.setState(() => ({ TblBait: response.data }));
+      })
+      .catch(error => {
+        console.error('Server Error', error);
+      });
 
     axios
-    .get('http://localhost:5050/api/baitColor')
-    .then(response => {
-      this.setState(() => ({ TblBaitColor: response.data }));
-    })
-    .catch(error => {
-      console.error('Server Error', error);
-    });
-    // const lunarPhase = TblLunarPhase;
-    // const hookType = TblHookType;
-    //const lineColor = TblLineColor;
-    // const lineStyle = TblLineStyle;
-    //const species = TblSpecies;
-    //const windDirection = TblWindDirection;
-    //const hookSize = TblHookSize;
-    //const sinkerWeight = TblSinkerWeight;
-    //const sinkerStyle = TblSinkerStyle;
-    // const sky = TblSky;
-    // const bait = TblBait;
-    // const baitColor = TblBaitColor;
-    // const outcome = TblOutcome;
+      .get('http://localhost:5050/api/baitColor')
+      .then(response => {
+        this.setState(() => ({ TblBaitColor: response.data }));
+      })
+      .catch(error => {
+        console.error('Server Error', error);
+      });
 
 
     this.setState(() => ({
@@ -106,13 +95,17 @@ class CatchFrm extends Component {
       TblLineTest: TblLineTest,
       TblSky: TblSky,
       //TblBait: TblBait,
-     // TblBaitColor: TblBaitColor,
+      // TblBaitColor: TblBaitColor,
       TblOutcome: TblOutcome
     }));
     console.log("state:", this.state)
   }
 
-
+  onDrop(picture) {
+    this.setState({
+      pictures: this.state.pictures.concat(picture),
+    });
+  }
   /*  handleChange = (event) => {
      const target = event.target;
      const value = target.value;
@@ -131,59 +124,59 @@ class CatchFrm extends Component {
        'column2': true,
        'hi-lite': temp
      }) */
-    let currentPhases = this.state.TblLunarPhase;
+    const currentPhases = this.state.TblLunarPhase;
     let optionItems1 = currentPhases.map((currentPhase) =>
       <option key={currentPhase.ID} value={currentPhase.LunarPhase} name={currentPhase.LunarPhase}>{currentPhase.LunarPhase}</option>
     );
-    let currentHookTypes = this.state.TblHookType;
+    const currentHookTypes = this.state.TblHookType;
     let optionItems2 = currentHookTypes.map((currentHookType) =>
       <option key={currentHookType.ID} value={currentHookType.HookType} name={currentHookType.HookType}>{currentHookType.HookType}</option>
     );
-    let currentLineColors = this.state.TblLineColor;
+    const currentLineColors = this.state.TblLineColor;
     let optionItems4 = currentLineColors.map((currentLineColor) =>
       <option key={currentLineColor.ID} value={currentLineColor.LineColor} name={currentLineColor.LineColor}>{currentLineColor.LineColor}</option>
     );
-    let currentLineStyles = this.state.TblLineStyle;
+    const currentLineStyles = this.state.TblLineStyle;
     let optionItems3 = currentLineStyles.map((currentLineStyle) =>
       <option key={currentLineStyle.ID} value={currentLineStyle.LineStyle} name={currentLineStyle.LineStyle}>{currentLineStyle.LineStyle}</option>
     );
-    let currentSpecies = this.state.TblSpecies;
+    const currentSpecies = this.state.TblSpecies;
     let optionItems5 = currentSpecies.map((current) =>
       <option key={current.ID} value={current.Species} name={current.Species}>{current.Species}</option>
     );
-    let currentWindDirection = this.state.TblWindDirection;
+    const currentWindDirection = this.state.TblWindDirection;
     let optionItems6 = currentWindDirection.map((wind) =>
       <option key={wind.ID} value={wind.Direction}>{wind.Direction}</option>
     );
-    let currentHookSize = this.state.TblHookSize;
+    const currentHookSize = this.state.TblHookSize;
     let optionItems7 = currentHookSize.map((hook) =>
       <option key={hook.ID} value={hook.HookSize}>{hook.HookSize}</option>
     );
-    let currentSinkerStyle = this.state.TblSinkerStyle;
+    const currentSinkerStyle = this.state.TblSinkerStyle;
     let optionItems8 = currentSinkerStyle.map((item) =>
       <option key={item.ID} value={item.SinkerStyle}>{item.SinkerStyle}</option>
     );
-    let currentSinkerWeight = this.state.TblSinkerWeight;
+    const currentSinkerWeight = this.state.TblSinkerWeight;
     let optionItems9 = currentSinkerWeight.map((item) =>
       <option key={item.ID} value={item.SinkerWeight}>{item.SinkerWeight}</option>
     );
-    let currentSky = this.state.TblSky;
+    const currentSky = this.state.TblSky;
     const optionItems10 = currentSky.map((item) =>
       <option key={item.ID} value={item.Sky}>{item.Sky}</option>
     );
-    let currentBait = this.state.TblBait;
+    const currentBait = this.state.TblBait;
     let optionItems11 = currentBait.map((item) =>
       <option key={item.ID} value={item.Bait}>{item.Bait}</option>
     );
-    let currentBaitColor = this.state.TblBaitColor;
+    const currentBaitColor = this.state.TblBaitColor;
     let optionItems12 = currentBaitColor.map((item) =>
       <option key={item.ID} value={item.BaitColor}>{item.BaitColor}</option>
     );
-    let currentOutcome = this.state.TblOutcome;
+    const currentOutcome = this.state.TblOutcome;
     let optionItems13 = currentOutcome.map((item) =>
       <option key={item.ID} value={item.Outcome}>{item.Outcome}</option>
     );
-    let currentLineTest = this.state.TblLineTest;
+    const currentLineTest = this.state.TblLineTest;
     let optionItems14 = currentLineTest.map((item) =>
       <option key={item.ID} value={item.LineTest}>{item.LineTest}</option>
     );
@@ -341,7 +334,14 @@ class CatchFrm extends Component {
               <div className="catch-text">Image Caption:</div>
               <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
               <div className="catch-text">Image:</div>
-              <input type="text" id="file-upload" className="catch" value={this.props.value} placeholder="click here to upload an image..." onChange={this.props.changeHandler} name="Photo" />
+              <ImageUploader
+                withIcon={true}
+                buttonText='Choose images'
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+              />
+              {/*  <input type="text" id="file-upload" className="catch" value={this.props.value} placeholder="click here to upload an image..." onChange={this.props.changeHandler} name="Photo" /> */}
               <div className="image-holder"> pic goes here </div>
             </div>
             <button className="save-catch-data" value="SaveCatchData" onSubmit={this.props.catchSubmit} name="SaveCatchData">Save Changes</button>

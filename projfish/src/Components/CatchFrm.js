@@ -16,6 +16,7 @@ import TblWindDirection from "../Tables/tblWindDirection";
 import ImageUploader from 'react-images-upload';
 import axios from "axios";
 import '../Css/CatchFrm.css';
+import Tilt from 'react-vanilla-tilt';
 
 
 class CatchFrm extends Component {
@@ -206,6 +207,7 @@ class CatchFrm extends Component {
             </div>
           </div>
           <div className="input-catch-container">
+
             <div className="fishSection">
               <h3>Fish Section:</h3>
               <div className="catch-text">Trip Name:</div>
@@ -249,48 +251,65 @@ class CatchFrm extends Component {
               {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="BaitColor" /> */}
               <div className="catch-text">Notes:</div>
               <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Notes" /></div>
-            <div className="weatherSection">
-              <h3>Weather Section:</h3>
-              <div className="catch-text">Air Temp:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="AirTemp" />
-              <div className="catch-text">Wind Direction:</div>
-              <select className="select-lunarphase" value={this.props.value} name="WindDirection" onChange={this.props.handleChange}>
-                {optionItems6}
-              </select>
-              {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WindDirection" /> */}
-              <div className="catch-text">Wind Speed:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Wind" />
-              <div className="catch-text">Sky Condition:</div>
-              <select className="select-lunarphase" value={this.props.value} name="Sky" onChange={this.props.handleChange}>
-                {optionItems10}
-              </select>
-              {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="SkyCondition" /> */}
-              <div className="catch-text"> Lunar Phase: </div>
-              <select className="select-lunarphase" value={this.props.value} name="LunarPhase" onChange={this.props.handleChange}>
-                {optionItems1}
-              </select>
-              <div className="catch-text">Pressure:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Pressure" />
-              <div className="catch-text">Barometer:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Barometer" />
-              <div className="catch-text">Water Temp:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterTemp" />
-              <div className="catch-text">Water Depth:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterDepth" />
-              <div className="catch-text">Water Ph:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterPh" />
-              <div className="catch-text">Current:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Current" />
-              <div className="catch-text">Bottom Surface:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Bottom" />
-              <div className="catch-text">Water Color:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterColor" />
-              <div className="catch-text">Tide:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Tide" />
-              <div className="catch-text">Water Level:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterLevel" />
-              <div className="catch-text">Seas:</div>
-              <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Seas" /></div>
+
+            <Tilt options={{
+              reverse: false,  // reverse the tilt direction
+              max: 35,     // max tilt rotation (degrees)
+              perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
+              scale: 1,      // 2 = 200%, 1.5 = 150%, etc..
+              speed: 300,    // Speed of the enter/exit transition
+              transition: true,   // Set a transition on enter/exit.
+              axis: null,   // What axis should be disabled. Can be X or Y.
+              reset: true,   // If the tilt effect has to be reset on exit.
+              easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+              glare: false,   // if it should have a "glare" effect
+              "max-glare": 1,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+              "glare-prerender": false   // false = VanillaTilt creates the glare elements for you, otherwise
+              // you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
+            }}>
+              < div className="weatherSection" >
+                <h3>Weather Section:</h3>
+                <div className="catch-text">Air Temp:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="AirTemp" />
+                <div className="catch-text">Wind Direction:</div>
+                <select className="select-lunarphase" value={this.props.value} name="WindDirection" onChange={this.props.handleChange}>
+                  {optionItems6}
+                </select>
+                {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WindDirection" /> */}
+                <div className="catch-text">Wind Speed:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Wind" />
+                <div className="catch-text">Sky Condition:</div>
+                <select className="select-lunarphase" value={this.props.value} name="Sky" onChange={this.props.handleChange}>
+                  {optionItems10}
+                </select>
+                {/* <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="SkyCondition" /> */}
+                <div className="catch-text"> Lunar Phase: </div>
+                <select className="select-lunarphase" value={this.props.value} name="LunarPhase" onChange={this.props.handleChange}>
+                  {optionItems1}
+                </select>
+                <div className="catch-text">Pressure:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Pressure" />
+                <div className="catch-text">Barometer:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Barometer" />
+                <div className="catch-text">Water Temp:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterTemp" />
+                <div className="catch-text">Water Depth:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterDepth" />
+                <div className="catch-text">Water Ph:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterPh" />
+                <div className="catch-text">Current:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Current" />
+                <div className="catch-text">Bottom Surface:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Bottom" />
+                <div className="catch-text">Water Color:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterColor" />
+                <div className="catch-text">Tide:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Tide" />
+                <div className="catch-text">Water Level:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterLevel" />
+                <div className="catch-text">Seas:</div>
+                <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Seas" /></div>
+            </Tilt>
             <div className="equipmentSection">
               <h3>Equipment Section:</h3>
               <div className="catch-text">Rod (Make/Model/Manf):</div>
@@ -330,6 +349,7 @@ class CatchFrm extends Component {
                 {optionItems4}
               </select>
             </div>
+
             <div className="photoSection"><h3>Photo Upload:</h3>
               <div className="catch-text">Image Caption:</div>
               <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
@@ -345,9 +365,9 @@ class CatchFrm extends Component {
               <div className="image-holder"> pic goes here </div>
             </div>
             <button className="save-catch-data" value="SaveCatchData" onSubmit={this.props.catchSubmit} name="SaveCatchData">Save Changes</button>
-          </div>
-        </div>
-      </form>
+          </div >
+        </div >
+      </form >
     );
   }
 }

@@ -186,10 +186,13 @@
     /* background-image: url('../Graphics/bass-1024.jpg'); */
     
     /* display: none; */
+    transform: scale(1) rotate(25deg) /* translate(50px,30px) */ skewX(-25deg) skewY(-15deg);
 }
+
 h3 {
 text-align: center;
 }
+
 .weatherSection {
     padding-left: 8px;
    /*  border: 2px solid green; */
@@ -200,6 +203,8 @@ text-align: center;
   /* background-image: url('../Graphics/m1.jpg');  */ 
   background-position: -140px 0px;   
   /* display: none; */
+
+
 }
 
 .equipmentSection {
@@ -214,6 +219,7 @@ text-align: center;
    /*   background-image: url('../Graphics/lake_prt.png'); */
      background-position: 00px 0px; 
   /*   display: none; */
+  transform: scale(1) rotate(5deg) translate(50px,30px) skewX(15deg);
 }
 
 .photoSection {

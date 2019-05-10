@@ -1,18 +1,58 @@
-import React from 'react';
+//import React from 'react';
+import React, { Component } from 'react';
 import '../Css/Slideshow.css'
 import ImageGallery from 'react-image-gallery';
 import { Slide } from 'react-slideshow-image';
 import { Zoom } from 'react-slideshow-image';
 
-//class Slideshow extends React.Component {
- 
+class Slideshow extends Component {
+  constructor(props) {
+    super(props);
 
-  const images = [
+    this.state = {
+      selectedIndex: 0,
+      cellCount: 9
+    }
+   // let carousel = document.querySelector('.carousel');
+    
+ 
+  }
+
+  componentDidMount() {
+ console.log("this.state:", this.state.selectedIndex)
+  }
+
+  rotateCarousel = (si) => {
+    let carousel = document.querySelector('.carousel')
+    let angle = si/ this.state.cellCount * -360;
+    carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
+  }
+  
+  prevButton = () => {
+ console.log("this.selectedIndex:", this.state.selectedIndex)
+   let SelectedIndex =  this.state.selectedIndex;
+   SelectedIndex--;
+   this.setState(() => ({ selectedIndex: SelectedIndex }));
+
+   this.rotateCarousel(SelectedIndex);
+
+  }
+  
+ 
+ nextButton = () => {
+  let SelectedIndex =  this.state.selectedIndex;
+  SelectedIndex++;
+  this.setState(() => ({ selectedIndex: SelectedIndex }));
+ 
+  this.rotateCarousel(SelectedIndex);
+  }
+ 
+ /*  const images = [
     'http://lorempixel.com/1000/600/nature/3/',
     'http://lorempixel.com/1000/600/nature/2/'
-   ];
+   ]; */
    
-  const properties = {
+  /* const properties = {
     duration: 5000,
     transitionDuration: 500,
     infinite: true,
@@ -27,20 +67,46 @@ import { Zoom } from 'react-slideshow-image';
     indicators: true,
     scale: 0.4,
     arrows: true
-  }
+  } */
   
   
-  const Slideshow = () => {
+render() {
+
+  //const Slideshow = () => {
     return (
-      <div className="new-slide">
+/*       <div className="new-slide">
       <Zoom {...zoomOutProperties}>
         {
           images.map((each, index) => <img  className="slideshow" key={index} style={{width: "100%"}} src={each} />)
         }
       </Zoom>
-      </div>
-    )
-}
+      </div> */
+ //  )
+//}
+
+<div className="new-slide">
+<div className="scene">
+  <div className="carousel">
+    <div className="carousel__cell">1</div>
+    <div className="carousel__cell">2</div>
+    <div className="carousel__cell">3</div>
+    <div className="carousel__cell">4</div>
+    <div className="carousel__cell">5</div>
+    <div className="carousel__cell">6</div>
+    <div className="carousel__cell">7</div>
+    <div className="carousel__cell">8</div>
+    <div className="carousel__cell">9</div>
+  </div>
+</div>
+{/* <p style="text-align: center;"> */}
+<p>
+  <button className="previous-button" onClick={this.prevButton}>Previous</button>
+  <button className="next-button" onClick={this.nextButton}>Next</button>
+</p>
+</div> 
+
+      )
+    }
 /*   const Slideshow = () => {
       return (
         <Slide {...properties}>
@@ -63,7 +129,7 @@ import { Zoom } from 'react-slideshow-image';
       )
   } */
 
-  Slideshow()
+  //Slideshow()
  
 
    /*  const images = [
@@ -162,5 +228,5 @@ import { Zoom } from 'react-slideshow-image';
      
     </div>
   ) */ 
-
+}
 export default Slideshow;

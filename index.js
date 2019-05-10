@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const db = require('./data/dbConfig');
 const parser = express.json();
 const server = express();
@@ -35,7 +36,7 @@ const sendUserError = (msg, res) => {
 // add your server code starting here
 
 
-
+const port = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
     console.log(`server is running on port ${PORT} `);

@@ -58,7 +58,7 @@ class App extends Component {
       WaterLevel: "",
       Seas: "",
       Rod: "",
-      Reel: "",
+      Reel: "", 
       HookSize: "",
       HookType: "",
       SinkerWeight: "",

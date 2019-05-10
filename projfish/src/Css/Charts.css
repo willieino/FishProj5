@@ -323,3 +323,10 @@
     width: 120px;
     /* border: 2px solid red;  */
 }
+
+.chartTest {
+border: 2px solid blue;
+width: 600px;
+height: 600px;
+
+}

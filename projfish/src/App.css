@@ -539,3 +539,10 @@ span {
 .save-btn:active {
     background-image: url('./Graphics/save_select.png');
 }
+
+.image-holder {
+height: 30px;
+width: 20px;
+
+}
+

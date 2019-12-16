@@ -252,21 +252,7 @@ class CatchFrm extends Component {
               <div className="catch-text">Notes:</div>
               <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Notes" /></div>
 
-            <Tilt options={{
-              reverse: false,  // reverse the tilt direction
-              max: 35,     // max tilt rotation (degrees)
-              perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
-              scale: 1,      // 2 = 200%, 1.5 = 150%, etc..
-              speed: 300,    // Speed of the enter/exit transition
-              transition: true,   // Set a transition on enter/exit.
-              axis: null,   // What axis should be disabled. Can be X or Y.
-              reset: true,   // If the tilt effect has to be reset on exit.
-              easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
-              glare: false,   // if it should have a "glare" effect
-              "max-glare": 1,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
-              "glare-prerender": false   // false = VanillaTilt creates the glare elements for you, otherwise
-              // you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
-            }}>
+           
               < div className="weatherSection" >
                 <h3>Weather Section:</h3>
                 <div className="catch-text">Air Temp:</div>
@@ -309,7 +295,7 @@ class CatchFrm extends Component {
                 <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="WaterLevel" />
                 <div className="catch-text">Seas:</div>
                 <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="Seas" /></div>
-            </Tilt>
+           
             <div className="equipmentSection">
               <h3>Equipment Section:</h3>
               <div className="catch-text">Rod (Make/Model/Manf):</div>
@@ -354,13 +340,13 @@ class CatchFrm extends Component {
               <div className="catch-text">Image Caption:</div>
               <input type="text" className="catch" value={this.props.value} onChange={this.props.changeHandler} name="ImgCaption" />
               <div className="catch-text">Image:</div>
-              <ImageUploader
+             {/*  <ImageUploader
                 withIcon={true}
                 buttonText='Choose images'
                 onChange={this.onDrop}
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
-              />
+              /> */}
               {/*  <input type="text" id="file-upload" className="catch" value={this.props.value} placeholder="click here to upload an image..." onChange={this.props.changeHandler} name="Photo" /> */}
               <div className="image-holder"> pic goes here </div>
             </div>

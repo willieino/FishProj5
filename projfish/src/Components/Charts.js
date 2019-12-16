@@ -3,7 +3,7 @@ import '../Css/Charts.css';
 //import CatchTbl from "../Tables/catchTbl";
 //import CatchHeaders from "../Tables/catchHeaders";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
-import ChartComponent from "./ChartComponent";
+//import ChartComponent from "./ChartComponent";
 import "react-table/react-table.css";
 import axios from "axios";
 
@@ -670,7 +670,7 @@ class Charts extends Component {
               <Bar dataKey='Qty' fill={this.state.color} />
             </BarChart></div>
         </div>
-      <ChartComponent />
+      {/* <ChartComponent /> */}
       </div>
     );
   }
